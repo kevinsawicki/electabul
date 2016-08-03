@@ -4,7 +4,7 @@
   "description": "Istanbul helpers for Electron apps",
   "main": "index.js",
   "bin": {
-    "elactabul": "./cli.js"
+    "electabul": "./cli.js"
   },
   "scripts": {
     "test": "mocha"
