@@ -1,0 +1,35 @@
+{
+  "name": "electabul",
+  "version": "0.0.1",
+  "description": "Istanbul helpers for Electron apps",
+  "main": "index.js",
+  "bin": {
+    "elactabul": "./cli.js"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinsawicki/electabul.git"
+  },
+  "keywords": [
+    "electron",
+    "istanbul",
+    "coverage"
+  ],
+  "author": "Kevin Sawicki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevinsawicki/electabul/issues"
+  },
+  "homepage": "https://github.com/kevinsawicki/electabul#readme",
+  "dependencies": {
+    "asar": "^0.12.1",
+    "glob": "^7.0.5",
+    "istanbul": "^0.4.4",
+    "mkdirp": "^0.5.1",
+    "temp": "^0.8.3",
+    "yargs": "^4.8.1"
+  }
+}
