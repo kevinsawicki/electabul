@@ -37,7 +37,7 @@ class Coverage {
   }
 
   addCoverage (data) {
-    this.collector.add(data)
+    if (data != null) this.collector.add(data)
   }
 
   isEnabled () {
