@@ -1,6 +1,6 @@
 {
   "name": "electabul",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Istanbul helpers for Electron apps",
   "main": "index.js",
   "bin": {
