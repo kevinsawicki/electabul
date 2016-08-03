@@ -145,7 +145,9 @@ class Coverage {
     app.on('web-contents-created', (event, webContents) => {
       webContents.executeJavaScript(`
         window.addEventListener('beforeunload', function () {
-          require('electron').ipcRenderer.send('save-coverage', window.__coverage__, window.process && window.process.pid)
+          if (typeof require !== 'undefined') {
+            require('electron').ipcRenderer.send('save-coverage', window.__coverage__, window.process && window.process.pid)
+          }
         })
       `)
     })
