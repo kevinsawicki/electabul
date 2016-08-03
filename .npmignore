@@ -1,2 +1,3 @@
 .node-version
 .npmignore
+npm-debug.log

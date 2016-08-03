@@ -108,25 +108,19 @@ class Coverage {
   }
 
   // Patch BrowserWindow methods to handle instrumenting windows that are
-  // explicitly destroyed via .destroy()
+  // explicitly destroyed via .close()
   patchBrowserWindow () {
     const {BrowserWindow} = require('electron')
 
-    const {destroy} = BrowserWindow.prototype
+    const {close} = BrowserWindow.prototype
     const self = this
-    BrowserWindow.prototype.destroy = function () {
-      if (this.isDestroyed() || !this.getURL()) {
-        return destroy.call(this)
+    BrowserWindow.prototype.close = function () {
+      if (this.isDestroyed() || !this.getURL() || !this.devToolsWebContents) {
+        return close.call(this)
       }
 
-      self.saveWebContentsCoverage(this.webContents, () => {
-        if (this.devToolsWebContents) {
-          self.saveWebContentsCoverage(this.devToolsWebContents, () => {
-            destroy.call(this)
-          })
-        } else {
-          destroy.call(this)
-        }
+      self.saveWebContentsCoverage(this.devToolsWebContents, () => {
+        close.call(this)
       })
     }
   }
