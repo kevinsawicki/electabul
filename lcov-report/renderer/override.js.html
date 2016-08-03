@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for renderer/override.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">renderer/</a> override.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">79.2% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>99/125</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70.83% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>34/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">46.43% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>13/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">79.2% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>99/125</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">90×</span>
+<span class="cline-any cline-yes">90×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict'
+&nbsp;
+const ipcRenderer = require('electron').ipcRenderer
+const remote = require('electron').remote
+&nbsp;
+// Helper function to resolve relative url.
+var a = window.top.document.createElement('a')
+var resolveURL = function (url) {
+  a.href = url
+  return a.href
+}
+&nbsp;
+// Window object returned by "window.open".
+var BrowserWindowProxy = (function () {
+  BrowserWindowProxy.proxies = {}
+&nbsp;
+  BrowserWindowProxy.getOrCreate = function (guestId) {
+    var base = this.proxies
+    base[guestId] != null ? base[guestId] : base[guestId] = new BrowserWindowProxy(guestId)
+    return base[guestId]
+  }
+&nbsp;
+  BrowserWindowProxy.remove = function (guestId) {
+    return delete this.proxies[guestId]
+  }
+&nbsp;
+  function BrowserWindowProxy (guestId1) {
+    Object.defineProperty(this, 'guestId', {
+      configurable: false,
+      enumerable: true,
+      writeable: false,
+      value: guestId1
+    })
+&nbsp;
+    this.closed = false
+    ipcRenderer.once('ELECTRON_GUEST_WINDOW_MANAGER_WINDOW_CLOSED_' + this.guestId, () =&gt; {
+      BrowserWindowProxy.remove(this.guestId)
+      this.closed = true
+    })
+  }
+&nbsp;
+  BrowserWindowProxy.prototype.close = function () {
+    return ipcRenderer.send('ELECTRON_GUEST_WINDOW_MANAGER_WINDOW_CLOSE', this.guestId)
+  }
+&nbsp;
+  BrowserWindowProxy.prototype.focus = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >    return ipcRenderer.send('ELECTRON_GUEST_WINDOW_MANAGER_WINDOW_METHOD', this.guestId, 'focus')</span>
+  }
+&nbsp;
+  BrowserWindowProxy.prototype.blur = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >    return ipcRenderer.send('ELECTRON_GUEST_WINDOW_MANAGER_WINDOW_METHOD', this.guestId, 'blur')</span>
+  }
+&nbsp;
+  BrowserWindowProxy.prototype.print = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >    return ipcRenderer.send('ELECTRON_GUEST_WINDOW_MANAGER_WEB_CONTENTS_METHOD', this.guestId, 'print')</span>
+  }
+&nbsp;
+  Object.defineProperty(BrowserWindowProxy.prototype, 'location', {
+    get: function () {
+      return ipcRenderer.sendSync('ELECTRON_GUEST_WINDOW_MANAGER_WINDOW_METHOD', this.guestId, 'getURL')
+    },
+    set: function (url) {
+      return ipcRenderer.sendSync('ELECTRON_GUEST_WINDOW_MANAGER_WINDOW_METHOD', this.guestId, 'loadURL', url)
+    }
+  })
+&nbsp;
+  BrowserWindowProxy.prototype.postMessage = function (message, targetOrigin) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (targetOrigin == null) {
+<span class="cstat-no" title="statement not covered" >      targetOrigin = '*'</span>
+    }
+    return ipcRenderer.send('ELECTRON_GUEST_WINDOW_MANAGER_WINDOW_POSTMESSAGE', this.guestId, message, targetOrigin, window.location.origin)
+  }
+&nbsp;
+  BrowserWindowProxy.prototype['eval'] = <span class="fstat-no" title="function not covered" >function (...args) {</span>
+<span class="cstat-no" title="statement not covered" >    return ipcRenderer.send.apply(ipcRenderer, ['ELECTRON_GUEST_WINDOW_MANAGER_WEB_CONTENTS_METHOD', this.guestId, 'executeJavaScript'].concat(args))</span>
+  }
+&nbsp;
+  return BrowserWindowProxy
+})()
+&nbsp;
+if (process.guestInstanceId == null) {
+  // Override default window.close.
+  window.close = function () {
+    return remote.getCurrentWindow().close()
+  }
+}
+&nbsp;
+// Make the browser window or guest view emit "new-window" event.
+window.open = function (url, frameName, features) {
+  var feature, guestId, i, j, len, len1, name, options, ref1, ref2, value
+  if (frameName == null) {
+    frameName = ''
+  }
+  if (features == null) {
+    features = ''
+  }
+  options = {}
+&nbsp;
+  const ints = ['x', 'y', 'width', 'height', 'minWidth', 'maxWidth', 'minHeight', 'maxHeight', 'zoomFactor']
+  const webPreferences = ['zoomFactor', 'nodeIntegration', 'preload']
+  const disposition = 'new-window'
+&nbsp;
+  // Make sure to get rid of excessive whitespace in the property name
+  ref1 = features.split(/,\s*/)
+  for (i = 0, len = ref1.length; i &lt; len; i++) {
+    feature = ref1[i]
+    ref2 = feature.split(/\s*=/)
+    name = ref2[0]
+    value = ref2[1]
+    value = value === 'yes' || value === '1' ? <span class="branch-0 cbranch-no" title="branch not covered" >true </span>: value === 'no' || value === '0' ? false : value
+    if (webPreferences.includes(name)) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (options.webPreferences == null) {
+        options.webPreferences = {}
+      }
+      options.webPreferences[name] = value
+    } else {
+      options[name] = value
+    }
+  }
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (options.left) {
+<span class="cstat-no" title="statement not covered" >    if (options.x == null) {</span>
+<span class="cstat-no" title="statement not covered" >      options.x = options.left</span>
+    }
+  }
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (options.top) {
+<span class="cstat-no" title="statement not covered" >    if (options.y == null) {</span>
+<span class="cstat-no" title="statement not covered" >      options.y = options.top</span>
+    }
+  }
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (options.title == null) {
+    options.title = frameName
+  }
+  if (options.width == null) {
+    options.width = 800
+  }
+  if (options.height == null) {
+    options.height = 600
+  }
+&nbsp;
+  // Resolve relative urls.
+  url = resolveURL(url)
+  for (j = 0, len1 = ints.length; j &lt; len1; j++) {
+    name = ints[j]
+    if (options[name] != null) {
+      options[name] = parseInt(options[name], 10)
+    }
+  }
+  guestId = ipcRenderer.sendSync('ELECTRON_GUEST_WINDOW_MANAGER_WINDOW_OPEN', url, frameName, disposition, options)
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (guestId) {
+    return BrowserWindowProxy.getOrCreate(guestId)
+  } else {
+<span class="cstat-no" title="statement not covered" >    return null</span>
+  }
+}
+&nbsp;
+// Use the dialog API to implement alert().
+window.alert = <span class="fstat-no" title="function not covered" >function (message = '', title = '') {</span>
+<span class="cstat-no" title="statement not covered" >  remote.dialog.showMessageBox(remote.getCurrentWindow(), {</span>
+    message: String(message),
+    title: String(title),
+    buttons: ['OK']
+  })
+}
+&nbsp;
+// And the confirm().
+window.confirm = <span class="fstat-no" title="function not covered" >function (message, title) {</span>
+<span class="cstat-no" title="statement not covered" >  var buttons, cancelId</span>
+<span class="cstat-no" title="statement not covered" >  if (title == null) {</span>
+<span class="cstat-no" title="statement not covered" >    title = ''</span>
+  }
+<span class="cstat-no" title="statement not covered" >  buttons = ['OK', 'Cancel']</span>
+<span class="cstat-no" title="statement not covered" >  cancelId = 1</span>
+<span class="cstat-no" title="statement not covered" >  return !remote.dialog.showMessageBox(remote.getCurrentWindow(), {</span>
+    message: message,
+    title: title,
+    buttons: buttons,
+    cancelId: cancelId
+  })
+}
+&nbsp;
+// But we do not support prompt().
+window.prompt = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >  throw new Error('prompt() is and will not be supported.')</span>
+}
+&nbsp;
+if (process.openerId != null) {
+  window.opener = BrowserWindowProxy.getOrCreate(process.openerId)
+}
+&nbsp;
+ipcRenderer.on('ELECTRON_GUEST_WINDOW_POSTMESSAGE', function (event, sourceId, message, sourceOrigin) {
+  // Manually dispatch event instead of using postMessage because we also need to
+  // set event.source.
+  event = document.createEvent('Event')
+  event.initEvent('message', false, false)
+  event.data = message
+  event.origin = sourceOrigin
+  event.source = BrowserWindowProxy.getOrCreate(sourceId)
+  window.dispatchEvent(event)
+})
+&nbsp;
+// Forward history operations to browser.
+var sendHistoryOperation = <span class="fstat-no" title="function not covered" >function (...args) {</span>
+<span class="cstat-no" title="statement not covered" >  return ipcRenderer.send.apply(ipcRenderer, ['ELECTRON_NAVIGATION_CONTROLLER'].concat(args))</span>
+}
+&nbsp;
+var getHistoryOperation = <span class="fstat-no" title="function not covered" >function (...args) {</span>
+<span class="cstat-no" title="statement not covered" >  return ipcRenderer.sendSync.apply(ipcRenderer, ['ELECTRON_SYNC_NAVIGATION_CONTROLLER'].concat(args))</span>
+}
+&nbsp;
+window.history.back = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >  return sendHistoryOperation('goBack')</span>
+}
+&nbsp;
+window.history.forward = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >  return sendHistoryOperation('goForward')</span>
+}
+&nbsp;
+window.history.go = <span class="fstat-no" title="function not covered" >function (offset) {</span>
+<span class="cstat-no" title="statement not covered" >  return sendHistoryOperation('goToOffset', offset)</span>
+}
+&nbsp;
+Object.defineProperty(window.history, 'length', {
+  get: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >    return getHistoryOperation('length')</span>
+  }
+})
+&nbsp;
+// The initial visibilityState.
+let cachedVisibilityState = process.argv.includes('--hidden-page') ? 'hidden' : 'visible'
+&nbsp;
+// Subscribe to visibilityState changes.
+ipcRenderer.on('ELECTRON_RENDERER_WINDOW_VISIBILITY_CHANGE', function (event, visibilityState) {
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (cachedVisibilityState !== visibilityState) {
+    cachedVisibilityState = visibilityState
+    document.dispatchEvent(new Event('visibilitychange'))
+  }
+})
+&nbsp;
+// Make document.hidden and document.visibilityState return the correct value.
+Object.defineProperty(document, 'hidden', {
+  get: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >    return cachedVisibilityState !== 'visible'</span>
+  }
+})
+&nbsp;
+Object.defineProperty(document, 'visibilityState', {
+  get: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >    return cachedVisibilityState</span>
+  }
+})
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

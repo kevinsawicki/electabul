@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for browser/objects-registry.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">browser/</a> objects-registry.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>38/40</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.57% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>11/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.37% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>37/38</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3265×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3265×</span>
+<span class="cline-any cline-yes">3265×</span>
+<span class="cline-any cline-yes">3265×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3265×</span>
+<span class="cline-any cline-yes">862×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">862×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3265×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2205×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">354×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">354×</span>
+<span class="cline-any cline-yes">354×</span>
+<span class="cline-any cline-yes">354×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3265×</span>
+<span class="cline-any cline-yes">3265×</span>
+<span class="cline-any cline-yes">854×</span>
+<span class="cline-any cline-yes">854×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">854×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3265×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">370×</span>
+<span class="cline-any cline-yes">370×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">370×</span>
+<span class="cline-any cline-yes">370×</span>
+<span class="cline-any cline-yes">362×</span>
+<span class="cline-any cline-yes">362×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict'
+&nbsp;
+const v8Util = process.atomBinding('v8_util')
+&nbsp;
+class ObjectsRegistry {
+  constructor () {
+    this.nextId = 0
+&nbsp;
+    // Stores all objects by ref-counting.
+    // (id) =&gt; {object, count}
+    this.storage = {}
+&nbsp;
+    // Stores the IDs of objects referenced by WebContents.
+    // (webContentsId) =&gt; [id]
+    this.owners = {}
+  }
+&nbsp;
+  // Register a new object and return its assigned ID. If the object is already
+  // registered then the already assigned ID would be returned.
+  add (webContents, obj) {
+    // Get or assign an ID to the object.
+    let id = this.saveToStorage(obj)
+&nbsp;
+    // Add object to the set of referenced objects.
+    let webContentsId = webContents.getId()
+    let owner = this.owners[webContentsId]
+    if (!owner) {
+      owner = this.owners[webContentsId] = new Set()
+      // Clear the storage when webContents is reloaded/navigated.
+      webContents.once('render-view-deleted', (event, id) =&gt; {
+        this.clear(id)
+      })
+    }
+    if (!owner.has(id)) {
+      owner.add(id)
+      // Increase reference count if not referenced before.
+      this.storage[id].count++
+    }
+    return id
+  }
+&nbsp;
+  // Get an object according to its ID.
+  get (id) {
+    return this.storage[id].object
+  }
+&nbsp;
+  // Dereference an object according to its ID.
+  remove (webContentsId, id) {
+    // Dereference from the storage.
+    this.dereference(id)
+&nbsp;
+    // Also remove the reference in owner.
+    let owner = this.owners[webContentsId]
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (owner) {
+      owner.delete(id)
+    }
+  }
+&nbsp;
+  // Clear all references to objects refrenced by the WebContents.
+  clear (webContentsId) {
+    let owner = this.owners[webContentsId]
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!owner) <span class="cstat-no" title="statement not covered" >return</span>
+&nbsp;
+    for (let id of owner) this.dereference(id)
+&nbsp;
+    delete this.owners[webContentsId]
+  }
+&nbsp;
+  // Private: Saves the object into storage and assigns an ID for it.
+  saveToStorage (object) {
+    let id = v8Util.getHiddenValue(object, 'atomId')
+    if (!id) {
+      id = ++this.nextId
+      this.storage[id] = {
+        count: 0,
+        object: object
+      }
+      v8Util.setHiddenValue(object, 'atomId', id)
+    }
+    return id
+  }
+&nbsp;
+  // Private: Dereference the object from store.
+  dereference (id) {
+    let pointer = this.storage[id]
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (pointer == null) {
+<span class="cstat-no" title="statement not covered" >      return</span>
+    }
+    pointer.count -= 1
+    if (pointer.count === 0) {
+      v8Util.deleteHiddenValue(pointer.object, 'atomId')
+      return delete this.storage[id]
+    }
+  }
+}
+&nbsp;
+module.exports = new ObjectsRegistry()
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

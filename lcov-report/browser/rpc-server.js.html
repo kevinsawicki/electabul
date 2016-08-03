@@ -1,0 +1,1181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for browser/rpc-server.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">browser/</a> rpc-server.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.4% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>179/198</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">87.8% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>72/82</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.77% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>30/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.26% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>176/195</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6711×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6711×</span>
+<span class="cline-any cline-yes">171×</span>
+<span class="cline-any cline-yes">1089×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6711×</span>
+<span class="cline-any cline-yes">113849×</span>
+<span class="cline-any cline-yes">113849×</span>
+<span class="cline-any cline-yes">113849×</span>
+<span class="cline-any cline-yes">77616×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36233×</span>
+<span class="cline-any cline-yes">36233×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">113849×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6711×</span>
+<span class="cline-any cline-yes">6711×</span>
+<span class="cline-any cline-yes">3446×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5499×</span>
+<span class="cline-any cline-yes">5499×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3986×</span>
+<span class="cline-any cline-yes">95×</span>
+<span class="cline-any cline-yes">3891×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">3884×</span>
+<span class="cline-any cline-yes">631×</span>
+<span class="cline-any cline-yes">3253×</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-yes">3190×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3189×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3184×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3184×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5499×</span>
+<span class="cline-any cline-yes">2732×</span>
+<span class="cline-any cline-yes">4868×</span>
+<span class="cline-any cline-yes">3265×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3265×</span>
+<span class="cline-any cline-yes">3265×</span>
+<span class="cline-any cline-yes">3265×</span>
+<span class="cline-any cline-yes">1603×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">1596×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1591×</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1528×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1527×</span>
+<span class="cline-any cline-yes">1527×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5499×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-yes">126×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1559×</span>
+<span class="cline-any cline-yes">2491×</span>
+<span class="cline-any cline-yes">2491×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1544×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">437×</span>
+<span class="cline-any cline-yes">437×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">437×</span>
+<span class="cline-any cline-yes">437×</span>
+<span class="cline-any cline-yes">910×</span>
+<span class="cline-any cline-yes">910×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">437×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">450×</span>
+<span class="cline-any cline-yes">450×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">450×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">445×</span>
+<span class="cline-any cline-yes">441×</span>
+<span class="cline-any cline-yes">441×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">445×</span>
+<span class="cline-any cline-yes">445×</span>
+<span class="cline-any cline-yes">445×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1559×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1362×</span>
+<span class="cline-any cline-yes">1362×</span>
+<span class="cline-any cline-yes">1362×</span>
+<span class="cline-any cline-yes">1362×</span>
+<span class="cline-any cline-yes">1362×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1362×</span>
+<span class="cline-any cline-yes">1349×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">168×</span>
+<span class="cline-any cline-yes">168×</span>
+<span class="cline-any cline-yes">168×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">168×</span>
+<span class="cline-any cline-yes">168×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1292×</span>
+<span class="cline-any cline-yes">1292×</span>
+<span class="cline-any cline-yes">1292×</span>
+<span class="cline-any cline-yes">1292×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">645×</span>
+<span class="cline-any cline-yes">645×</span>
+<span class="cline-any cline-yes">645×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">354×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict'
+&nbsp;
+const electron = require('electron')
+const v8Util = process.atomBinding('v8_util')
+const {ipcMain, isPromise, webContents} = electron
+&nbsp;
+const objectsRegistry = require('./objects-registry')
+&nbsp;
+const hasProp = {}.hasOwnProperty
+&nbsp;
+// The internal properties of Function.
+const FUNCTION_PROPERTIES = [
+  'length', 'name', 'arguments', 'caller', 'prototype'
+]
+&nbsp;
+// The remote functions in renderer processes.
+// id =&gt; Function
+let rendererFunctions = v8Util.createDoubleIDWeakMap()
+&nbsp;
+// Return the description of object's members:
+let getObjectMembers = function (object) {
+  let names = Object.getOwnPropertyNames(object)
+  // For Function, we should not override following properties even though they
+  // are "own" properties.
+  if (typeof object === 'function') {
+    names = names.filter((name) =&gt; {
+      return !FUNCTION_PROPERTIES.includes(name)
+    })
+  }
+  // Map properties to descriptors.
+  return names.map((name) =&gt; {
+    let descriptor = Object.getOwnPropertyDescriptor(object, name)
+    let member = {name, enumerable: descriptor.enumerable, writable: false}
+    if (descriptor.get === undefined &amp;&amp; typeof object[name] === 'function') {
+      member.type = 'method'
+    } else {
+      if (descriptor.set || descriptor.writable) member.writable = true
+      member.type = 'get'
+    }
+    return member
+  })
+}
+&nbsp;
+// Return the description of object's prototype.
+let getObjectPrototype = function (object) {
+  let proto = Object.getPrototypeOf(object)
+  if (proto === null || proto === Object.prototype) return null
+  return {
+    members: getObjectMembers(proto),
+    proto: getObjectPrototype(proto)
+  }
+}
+&nbsp;
+// Convert a real value into meta data.
+let valueToMeta = function (sender, value, optimizeSimpleObject = false) {
+  // Determine the type of value.
+  const meta = { type: typeof value }
+  if (meta.type === 'object') {
+    // Recognize certain types of objects.
+    if (value === null) {
+      meta.type = 'value'
+    } else if (ArrayBuffer.isView(value)) {
+      meta.type = 'buffer'
+    } else if (Array.isArray(value)) {
+      meta.type = 'array'
+    } else if (value instanceof Error) {
+      meta.type = 'error'
+    } else if (value instanceof Date) {
+      meta.type = 'date'
+    } else if (isPromise(value)) {
+      meta.type = 'promise'
+    } else <span class="missing-if-branch" title="if path not taken" >I</span>if (hasProp.call(value, 'callee') &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >value.length != null)</span> {
+      // Treat the arguments object as array.
+<span class="cstat-no" title="statement not covered" >      meta.type = 'array'</span>
+    } else if (optimizeSimpleObject &amp;&amp; v8Util.getHiddenValue(value, 'simple')) {
+      // Treat simple objects as value.
+      meta.type = 'value'
+    }
+  }
+&nbsp;
+  // Fill the meta object according to value's type.
+  if (meta.type === 'array') {
+    meta.members = value.map((el) =&gt; valueToMeta(sender, el))
+  } else if (meta.type === 'object' || meta.type === 'function') {
+    meta.name = value.constructor ? value.constructor.name : ''
+&nbsp;
+    // Reference the original value if it's an object, because when it's
+    // passed to renderer we would assume the renderer keeps a reference of
+    // it.
+    meta.id = objectsRegistry.add(sender, value)
+    meta.members = getObjectMembers(value)
+    meta.proto = getObjectPrototype(value)
+  } else if (meta.type === 'buffer') {
+    meta.value = Array.prototype.slice.call(value, 0)
+  } else if (meta.type === 'promise') {
+    // Add default handler to prevent unhandled rejections in main process
+    // Instead they should appear in the renderer process
+    value.then(function () {}, function () {})
+&nbsp;
+    meta.then = valueToMeta(sender, function (onFulfilled, onRejected) {
+      value.then(onFulfilled, onRejected)
+    })
+  } else if (meta.type === 'error') {
+    meta.members = plainObjectToMeta(value)
+&nbsp;
+    // Error.name is not part of own properties.
+    meta.members.push({
+      name: 'name',
+      value: value.name
+    })
+  } else if (meta.type === 'date') {
+    meta.value = value.getTime()
+  } else {
+    meta.type = 'value'
+    meta.value = value
+  }
+  return meta
+}
+&nbsp;
+// Convert object to meta by value.
+const plainObjectToMeta = function (obj) {
+  return Object.getOwnPropertyNames(obj).map(function (name) {
+    return {
+      name: name,
+      value: obj[name]
+    }
+  })
+}
+&nbsp;
+// Convert Error into meta data.
+const exceptionToMeta = function (error) {
+  return {
+    type: 'exception',
+    message: error.message,
+    stack: error.stack || <span class="branch-1 cbranch-no" title="branch not covered" >error</span>
+  }
+}
+&nbsp;
+// Convert array of meta data from renderer into array of real values.
+const unwrapArgs = function (sender, args) {
+  const metaToValue = function (meta) {
+    let i, len, member, ref, returnValue
+    switch (meta.type) {
+      case 'value':
+        return meta.value
+      case 'remote-object':
+        return objectsRegistry.get(meta.id)
+      case 'array':
+        return unwrapArgs(sender, meta.value)
+      case 'buffer':
+        return Buffer.from(meta.value)
+      case 'date':
+        return new Date(meta.value)
+      case 'promise':
+        return Promise.resolve({
+          then: metaToValue(meta.then)
+        })
+      case 'object': {
+        let ret = {}
+        Object.defineProperty(ret.constructor, 'name', { value: meta.name })
+&nbsp;
+        ref = meta.members
+        for (i = 0, len = ref.length; i &lt; len; i++) {
+          member = ref[i]
+          ret[member.name] = metaToValue(member.value)
+        }
+        return ret
+      }
+      case 'function-with-return-value':
+        returnValue = metaToValue(meta.value)
+        return function () {
+          return returnValue
+        }
+      case 'function': {
+        // Merge webContentsId and meta.id, since meta.id can be the same in
+        // different webContents.
+        const webContentsId = sender.getId()
+        const objectId = [webContentsId, meta.id]
+&nbsp;
+        // Cache the callbacks in renderer.
+        if (rendererFunctions.has(objectId)) {
+          return rendererFunctions.get(objectId)
+        }
+&nbsp;
+        let callIntoRenderer = function (...args) {
+          <span class="missing-if-branch" title="else path not taken" >E</span>if (!sender.isDestroyed() &amp;&amp; webContentsId === sender.getId()) {
+            sender.send('ELECTRON_RENDERER_CALLBACK', meta.id, valueToMeta(sender, args))
+          } else {
+<span class="cstat-no" title="statement not covered" >            throw new Error(`Attempting to call a function in a renderer window that has been closed or released. Function provided here: ${meta.location}.`)</span>
+          }
+        }
+&nbsp;
+        v8Util.setRemoteCallbackFreer(callIntoRenderer, meta.id, sender)
+        rendererFunctions.set(objectId, callIntoRenderer)
+        return callIntoRenderer
+      }
+<span class="branch-9 cbranch-no" title="branch not covered" >      default:</span>
+<span class="cstat-no" title="statement not covered" >        throw new TypeError(`Unknown type: ${meta.type}`)</span>
+    }
+  }
+  return args.map(metaToValue)
+}
+&nbsp;
+// Call a function and send reply asynchronously if it's a an asynchronous
+// style function and the caller didn't pass a callback.
+const callFunction = function (event, func, caller, args) {
+  let funcMarkedAsync, funcName, funcPassedCallback, ref, ret
+  funcMarkedAsync = v8Util.getHiddenValue(func, 'asynchronous')
+  funcPassedCallback = typeof args[args.length - 1] === 'function'
+  try {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (funcMarkedAsync &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!funcPassedCallback)</span> {
+<span class="cstat-no" title="statement not covered" >      args.push(<span class="fstat-no" title="function not covered" >function (ret) {</span></span>
+<span class="cstat-no" title="statement not covered" >        event.returnValue = valueToMeta(event.sender, ret, true)</span>
+      })
+<span class="cstat-no" title="statement not covered" >      func.apply(caller, args)</span>
+    } else {
+      ret = func.apply(caller, args)
+      event.returnValue = valueToMeta(event.sender, ret, true)
+    }
+  } catch (error) {
+    // Catch functions thrown further down in function invocation and wrap
+    // them with the function name so it's easier to trace things like
+    // `Error processing argument -1.`
+    funcName = ((ref = func.name) != null) ? ref : <span class="branch-1 cbranch-no" title="branch not covered" >'anonymous'</span>
+    throw new Error(`Could not call remote function '${funcName}'. Check that the function signature is correct. Underlying error: ${error.message}`)
+  }
+}
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_REQUIRE', function (event, module) {
+  try {
+    event.returnValue = valueToMeta(event.sender, process.mainModule.require(module))
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    event.returnValue = exceptionToMeta(error)</span>
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_GET_BUILTIN', function (event, module) {
+  try {
+    event.returnValue = valueToMeta(event.sender, electron[module])
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    event.returnValue = exceptionToMeta(error)</span>
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_GLOBAL', function (event, name) {
+  try {
+    event.returnValue = valueToMeta(event.sender, global[name])
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    event.returnValue = exceptionToMeta(error)</span>
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_CURRENT_WINDOW', function (event) {
+  try {
+    event.returnValue = valueToMeta(event.sender, event.sender.getOwnerBrowserWindow())
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    event.returnValue = exceptionToMeta(error)</span>
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_CURRENT_WEB_CONTENTS', function (event) {
+  event.returnValue = valueToMeta(event.sender, event.sender)
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_CONSTRUCTOR', function (event, id, args) {
+  try {
+    args = unwrapArgs(event.sender, args)
+    let constructor = objectsRegistry.get(id)
+&nbsp;
+    // Call new with array of arguments.
+    // http://stackoverflow.com/questions/1606797/use-of-apply-with-new-operator-is-this-possible
+    let obj = new (Function.prototype.bind.apply(constructor, [null].concat(args)))
+    event.returnValue = valueToMeta(event.sender, obj)
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    event.returnValue = exceptionToMeta(error)</span>
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_FUNCTION_CALL', function (event, id, args) {
+  try {
+    args = unwrapArgs(event.sender, args)
+    let func = objectsRegistry.get(id)
+    callFunction(event, func, global, args)
+  } catch (error) {
+    event.returnValue = exceptionToMeta(error)
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_MEMBER_CONSTRUCTOR', function (event, id, method, args) {
+  try {
+    args = unwrapArgs(event.sender, args)
+    let constructor = objectsRegistry.get(id)[method]
+&nbsp;
+    // Call new with array of arguments.
+    let obj = new (Function.prototype.bind.apply(constructor, [null].concat(args)))
+    event.returnValue = valueToMeta(event.sender, obj)
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    event.returnValue = exceptionToMeta(error)</span>
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_MEMBER_CALL', function (event, id, method, args) {
+  try {
+    args = unwrapArgs(event.sender, args)
+    let obj = objectsRegistry.get(id)
+    callFunction(event, obj[method], obj, args)
+  } catch (error) {
+    event.returnValue = exceptionToMeta(error)
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_MEMBER_SET', function (event, id, name, value) {
+  try {
+    let obj = objectsRegistry.get(id)
+    obj[name] = value
+    event.returnValue = null
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    event.returnValue = exceptionToMeta(error)</span>
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_MEMBER_GET', function (event, id, name) {
+  try {
+    let obj = objectsRegistry.get(id)
+    event.returnValue = valueToMeta(event.sender, obj[name])
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    event.returnValue = exceptionToMeta(error)</span>
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_DEREFERENCE', function (event, id) {
+  objectsRegistry.remove(event.sender.getId(), id)
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_GUEST_WEB_CONTENTS', function (event, guestInstanceId) {
+  try {
+    let guestViewManager = require('./guest-view-manager')
+    event.returnValue = valueToMeta(event.sender, guestViewManager.getGuest(guestInstanceId))
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    event.returnValue = exceptionToMeta(error)</span>
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_ASYNC_CALL_TO_GUEST_VIEW', function (event, requestId, guestInstanceId, method, ...args) {
+  try {
+    let guestViewManager = require('./guest-view-manager')
+    let guest = guestViewManager.getGuest(guestInstanceId)
+    if (requestId) {
+      const responseCallback = function (result) {
+        event.sender.send(`ELECTRON_RENDERER_ASYNC_CALL_TO_GUEST_VIEW_RESPONSE_${requestId}`, result)
+      }
+      args.push(responseCallback)
+    }
+    guest[method].apply(guest, args)
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    event.returnValue = exceptionToMeta(error)</span>
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_BROWSER_SEND_TO', function (event, sendToAll, webContentsId, channel, ...args) {
+  let contents = webContents.fromId(webContentsId)
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!contents) {
+<span class="cstat-no" title="statement not covered" >    console.error(`Sending message to WebContents with unknown ID ${webContentsId}`)</span>
+<span class="cstat-no" title="statement not covered" >    return</span>
+  }
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (sendToAll) {
+<span class="cstat-no" title="statement not covered" >    contents.sendToAll(channel, ...args)</span>
+  } else {
+    contents.send(channel, ...args)
+  }
+})
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/api/crash-reporter.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">common/api/</a> crash-reporter.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">76.79% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>43/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">46.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>14/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">76.79% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>43/56</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict'
+&nbsp;
+const os = require('os')
+const path = require('path')
+const spawn = require('child_process').spawn
+const electron = require('electron')
+const binding = process.atomBinding('crash_reporter')
+&nbsp;
+var CrashReporter = (function () {
+  function CrashReporter () {}
+&nbsp;
+  CrashReporter.prototype.start = function (options) {
+    var app, args, autoSubmit, companyName, env, extra, ignoreSystemCrashHandler, start, submitURL
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (options == null) {
+<span class="cstat-no" title="statement not covered" >      options = {}</span>
+    }
+    this.productName = options.productName
+    companyName = options.companyName
+    submitURL = options.submitURL
+    autoSubmit = options.autoSubmit
+    ignoreSystemCrashHandler = options.ignoreSystemCrashHandler
+    extra = options.extra
+&nbsp;
+    app = (process.type === 'browser' ? electron : <span class="branch-1 cbranch-no" title="branch not covered" >electron.remote)</span>.app
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.productName == null) {
+      this.productName = app.getName()
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (autoSubmit == null) {
+      autoSubmit = true
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (ignoreSystemCrashHandler == null) {
+      ignoreSystemCrashHandler = false
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (extra == null) {
+      extra = {}
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (extra._productName == null) {
+      extra._productName = this.productName
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (extra._companyName == null) {
+      extra._companyName = companyName
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (extra._version == null) {
+      extra._version = app.getVersion()
+    }
+    if (companyName == null) {
+      throw new Error('companyName is a required option to crashReporter.start')
+    }
+    if (submitURL == null) {
+      throw new Error('submitURL is a required option to crashReporter.start')
+    }
+    start = () =&gt; {
+      binding.start(this.productName, companyName, submitURL, autoSubmit, ignoreSystemCrashHandler, extra)
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (process.platform === 'win32') {
+<span class="cstat-no" title="statement not covered" >      args = ['--reporter-url=' + submitURL, '--application-name=' + this.productName, '--v=1']</span>
+<span class="cstat-no" title="statement not covered" >      env = {</span>
+        ELECTRON_INTERNAL_CRASH_SERVICE: 1
+      }
+<span class="cstat-no" title="statement not covered" >      spawn(process.execPath, args, {</span>
+        env: env,
+        detached: true
+      })
+    }
+    return start()
+  }
+&nbsp;
+  CrashReporter.prototype.getLastCrashReport = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >    var reports</span>
+<span class="cstat-no" title="statement not covered" >    reports = this.getUploadedReports()</span>
+<span class="cstat-no" title="statement not covered" >    if (reports.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      return reports[0]</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      return null</span>
+    }
+  }
+&nbsp;
+  CrashReporter.prototype.getUploadedReports = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >    var log, tmpdir</span>
+<span class="cstat-no" title="statement not covered" >    tmpdir = process.platform === 'win32' ? os.tmpdir() : '/tmp'</span>
+<span class="cstat-no" title="statement not covered" >    log = process.platform === 'darwin' ? path.join(tmpdir, this.productName + ' Crashes') : path.join(tmpdir, this.productName + ' Crashes', 'uploads.log')</span>
+<span class="cstat-no" title="statement not covered" >    return binding._getUploadedReports(log)</span>
+  }
+&nbsp;
+  return CrashReporter
+})()
+&nbsp;
+module.exports = new CrashReporter()
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

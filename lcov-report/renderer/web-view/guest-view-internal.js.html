@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for renderer/web-view/guest-view-internal.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">renderer/web-view/</a> guest-view-internal.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">81.4% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>35/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">81.4% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>35/43</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">574×</span>
+<span class="cline-any cline-yes">574×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">574×</span>
+<span class="cline-any cline-yes">574×</span>
+<span class="cline-any cline-yes">574×</span>
+<span class="cline-any cline-yes">950×</span>
+<span class="cline-any cline-yes">950×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">574×</span>
+<span class="cline-any cline-yes">574×</span>
+<span class="cline-any cline-yes">61×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-yes">567×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict'
+&nbsp;
+const ipcRenderer = require('electron').ipcRenderer
+const webFrame = require('electron').webFrame
+&nbsp;
+var requestId = 0
+&nbsp;
+var WEB_VIEW_EVENTS = {
+  'load-commit': ['url', 'isMainFrame'],
+  'did-finish-load': [],
+  'did-fail-load': ['errorCode', 'errorDescription', 'validatedURL', 'isMainFrame'],
+  'did-frame-finish-load': ['isMainFrame'],
+  'did-start-loading': [],
+  'did-stop-loading': [],
+  'did-get-response-details': ['status', 'newURL', 'originalURL', 'httpResponseCode', 'requestMethod', 'referrer', 'headers', 'resourceType'],
+  'did-get-redirect-request': ['oldURL', 'newURL', 'isMainFrame'],
+  'dom-ready': [],
+  'console-message': ['level', 'message', 'line', 'sourceId'],
+  'devtools-opened': [],
+  'devtools-closed': [],
+  'devtools-focused': [],
+  'new-window': ['url', 'frameName', 'disposition', 'options'],
+  'will-navigate': ['url'],
+  'did-navigate': ['url'],
+  'did-navigate-in-page': ['url'],
+  'close': [],
+  'crashed': [],
+  'gpu-crashed': [],
+  'plugin-crashed': ['name', 'version'],
+  'destroyed': [],
+  'page-title-updated': ['title', 'explicitSet'],
+  'page-favicon-updated': ['favicons'],
+  'enter-html-full-screen': [],
+  'leave-html-full-screen': [],
+  'media-started-playing': [],
+  'media-paused': [],
+  'found-in-page': ['result'],
+  'did-change-theme-color': ['themeColor'],
+  'update-target-url': ['url']
+}
+&nbsp;
+var DEPRECATED_EVENTS = {
+  'page-title-updated': 'page-title-set'
+}
+&nbsp;
+var dispatchEvent = function (webView, eventName, eventKey, ...args) {
+  var domEvent, f, i, j, len, ref1
+  if (DEPRECATED_EVENTS[eventName] != null) {
+    dispatchEvent.apply(null, [webView, DEPRECATED_EVENTS[eventName], eventKey].concat(args))
+  }
+  domEvent = new Event(eventName)
+  ref1 = WEB_VIEW_EVENTS[eventKey]
+  for (i = j = 0, len = ref1.length; j &lt; len; i = ++j) {
+    f = ref1[i]
+    domEvent[f] = args[i]
+  }
+  webView.dispatchEvent(domEvent)
+  if (eventName === 'load-commit') {
+    return webView.onLoadCommit(domEvent)
+  }
+}
+&nbsp;
+module.exports = {
+  registerEvents: function (webView, viewInstanceId) {
+    ipcRenderer.on('ELECTRON_GUEST_VIEW_INTERNAL_DISPATCH_EVENT-' + viewInstanceId, function (event, eventName, ...args) {
+      dispatchEvent.apply(null, [webView, eventName, eventName].concat(args))
+    })
+&nbsp;
+    ipcRenderer.on('ELECTRON_GUEST_VIEW_INTERNAL_IPC_MESSAGE-' + viewInstanceId, function (event, channel, ...args) {
+      var domEvent = new Event('ipc-message')
+      domEvent.channel = channel
+      domEvent.args = args
+      webView.dispatchEvent(domEvent)
+    })
+&nbsp;
+    return ipcRenderer.on('ELECTRON_GUEST_VIEW_INTERNAL_SIZE_CHANGED-' + viewInstanceId, <span class="fstat-no" title="function not covered" >function (event, ...args) {</span>
+<span class="cstat-no" title="statement not covered" >      var domEvent, f, i, j, len, ref1</span>
+<span class="cstat-no" title="statement not covered" >      domEvent = new Event('size-changed')</span>
+<span class="cstat-no" title="statement not covered" >      ref1 = ['oldWidth', 'oldHeight', 'newWidth', 'newHeight']</span>
+<span class="cstat-no" title="statement not covered" >      for (i = j = 0, len = ref1.length; j &lt; len; i = ++j) {</span>
+<span class="cstat-no" title="statement not covered" >        f = ref1[i]</span>
+<span class="cstat-no" title="statement not covered" >        domEvent[f] = args[i]</span>
+      }
+<span class="cstat-no" title="statement not covered" >      webView.onSizeChanged(domEvent)</span>
+    })
+  },
+  deregisterEvents: function (viewInstanceId) {
+    ipcRenderer.removeAllListeners('ELECTRON_GUEST_VIEW_INTERNAL_DISPATCH_EVENT-' + viewInstanceId)
+    ipcRenderer.removeAllListeners('ELECTRON_GUEST_VIEW_INTERNAL_IPC_MESSAGE-' + viewInstanceId)
+    return ipcRenderer.removeAllListeners('ELECTRON_GUEST_VIEW_INTERNAL_SIZE_CHANGED-' + viewInstanceId)
+  },
+  createGuest: function (params, callback) {
+    requestId++
+    ipcRenderer.send('ELECTRON_GUEST_VIEW_MANAGER_CREATE_GUEST', params, requestId)
+    return ipcRenderer.once('ELECTRON_RESPONSE_' + requestId, callback)
+  },
+  attachGuest: function (elementInstanceId, guestInstanceId, params) {
+    ipcRenderer.send('ELECTRON_GUEST_VIEW_MANAGER_ATTACH_GUEST', elementInstanceId, guestInstanceId, params)
+    return webFrame.attachGuest(elementInstanceId)
+  },
+  destroyGuest: function (guestInstanceId) {
+    return ipcRenderer.send('ELECTRON_GUEST_VIEW_MANAGER_DESTROY_GUEST', guestInstanceId)
+  },
+  setSize: <span class="fstat-no" title="function not covered" >function (guestInstanceId, params) {</span>
+<span class="cstat-no" title="statement not covered" >    return ipcRenderer.send('ELECTRON_GUEST_VIEW_MANAGER_SET_SIZE', guestInstanceId, params)</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for browser/api/web-contents.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">browser/api/</a> web-contents.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">73.96% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>71/96</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.89% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>14/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">75% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>15/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">73.91% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>68/92</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">286×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-yes">1384×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1382×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-yes">3968×</span>
+<span class="cline-any cline-yes">3968×</span>
+<span class="cline-any cline-yes">3968×</span>
+<span class="cline-any cline-yes">572×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-yes">992×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-yes">150×</span>
+<span class="cline-any cline-yes">150×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-yes">285×</span>
+<span class="cline-any cline-yes">285×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">285×</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">240×</span>
+<span class="cline-any cline-yes">105×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-yes">633×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-yes">2381×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2382×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2381×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">61×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict'
+&nbsp;
+const {EventEmitter} = require('events')
+const {app, ipcMain, session, Menu, NavigationController} = require('electron')
+&nbsp;
+// session is not used here, the purpose is to make sure session is initalized
+// before the webContents module.
+session
+&nbsp;
+const binding = process.atomBinding('web_contents')
+const debuggerBinding = process.atomBinding('debugger')
+&nbsp;
+let nextId = 0
+const getNextId = function () {
+  return ++nextId
+}
+&nbsp;
+// Stock page sizes
+const PDFPageSizes = {
+  A5: {
+    custom_display_name: 'A5',
+    height_microns: 210000,
+    name: 'ISO_A5',
+    width_microns: 148000
+  },
+  A4: {
+    custom_display_name: 'A4',
+    height_microns: 297000,
+    name: 'ISO_A4',
+    is_default: 'true',
+    width_microns: 210000
+  },
+  A3: {
+    custom_display_name: 'A3',
+    height_microns: 420000,
+    name: 'ISO_A3',
+    width_microns: 297000
+  },
+  Legal: {
+    custom_display_name: 'Legal',
+    height_microns: 355600,
+    name: 'NA_LEGAL',
+    width_microns: 215900
+  },
+  Letter: {
+    custom_display_name: 'Letter',
+    height_microns: 279400,
+    name: 'NA_LETTER',
+    width_microns: 215900
+  },
+  Tabloid: {
+    height_microns: 431800,
+    name: 'NA_LEDGER',
+    width_microns: 279400,
+    custom_display_name: 'Tabloid'
+  }
+}
+&nbsp;
+// Default printing setting
+const defaultPrintingSetting = {
+  pageRage: [],
+  mediaSize: {},
+  landscape: false,
+  color: 2,
+  headerFooterEnabled: false,
+  marginsType: 0,
+  isFirstRequest: false,
+  requestID: getNextId(),
+  previewModifiable: true,
+  printToPDF: true,
+  printWithCloudPrint: false,
+  printWithPrivet: false,
+  printWithExtension: false,
+  deviceName: 'Save as PDF',
+  generateDraftData: true,
+  fitToPageEnabled: false,
+  duplex: 0,
+  copies: 1,
+  collate: true,
+  shouldPrintBackgrounds: false,
+  shouldPrintSelectionOnly: false
+}
+&nbsp;
+// Following methods are mapped to webFrame.
+const webFrameMethods = [
+  'insertText',
+  'setZoomFactor',
+  'setZoomLevel',
+  'setZoomLevelLimits'
+]
+&nbsp;
+// Add JavaScript wrappers for WebContents class.
+const wrapWebContents = function (webContents) {
+  // webContents is an EventEmitter.
+  Object.setPrototypeOf(webContents, EventEmitter.prototype)
+&nbsp;
+  // Every remote callback from renderer process would add a listenter to the
+  // render-view-deleted event, so ignore the listenters warning.
+  webContents.setMaxListeners(0)
+&nbsp;
+  // WebContents::send(channel, args..)
+  // WebContents::sendToAll(channel, args..)
+  const sendWrapper = (allFrames, channel, ...args) =&gt; {
+    if (channel == null) {
+      throw new Error('Missing required channel argument')
+    }
+    return webContents._send(allFrames, channel, args)
+  }
+  webContents.send = sendWrapper.bind(null, false)
+  webContents.sendToAll = sendWrapper.bind(null, true)
+&nbsp;
+  // The navigation controller.
+  const controller = new NavigationController(webContents)
+  for (const name in NavigationController.prototype) {
+    const method = NavigationController.prototype[name]
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (method instanceof Function) {
+      webContents[name] = function () {
+        return method.apply(controller, arguments)
+      }
+    }
+  }
+&nbsp;
+  // Mapping webFrame methods.
+  for (const method of webFrameMethods) {
+    webContents[method] = <span class="fstat-no" title="function not covered" >function (...args) {</span>
+<span class="cstat-no" title="statement not covered" >      this.send('ELECTRON_INTERNAL_RENDERER_WEB_FRAME_METHOD', method, args)</span>
+    }
+  }
+&nbsp;
+  const asyncWebFrameMethods = function (requestId, method, callback, ...args) {
+    this.send('ELECTRON_INTERNAL_RENDERER_ASYNC_WEB_FRAME_METHOD', requestId, method, args)
+    ipcMain.once(`ELECTRON_INTERNAL_BROWSER_ASYNC_WEB_FRAME_RESPONSE_${requestId}`, function (event, result) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (callback) callback(result)
+    })
+  }
+&nbsp;
+  // Make sure webContents.executeJavaScript would run the code only when the
+  // webContents has been loaded.
+  webContents.executeJavaScript = function (code, hasUserGesture, callback) {
+    const requestId = getNextId()
+    if (typeof hasUserGesture === 'function') {
+      callback = hasUserGesture
+      hasUserGesture = false
+    }
+    if (this.getURL() &amp;&amp; !this.isLoadingMainFrame()) {
+      asyncWebFrameMethods.call(this, requestId, 'executeJavaScript', callback, code, hasUserGesture)
+    } else {
+      this.once('did-finish-load', () =&gt; {
+        asyncWebFrameMethods.call(this, requestId, 'executeJavaScript', callback, code, hasUserGesture)
+      })
+    }
+  }
+&nbsp;
+  // Dispatch IPC messages to the ipc module.
+  webContents.on('ipc-message', function (event, [channel, ...args]) {
+    ipcMain.emit(channel, event, ...args)
+  })
+  webContents.on('ipc-message-sync', function (event, [channel, ...args]) {
+    Object.defineProperty(event, 'returnValue', {
+      set: function (value) {
+        return event.sendReply(JSON.stringify(value))
+      },
+      get: <span class="fstat-no" title="function not covered" >function () {</span>}
+    })
+    ipcMain.emit(channel, event, ...args)
+  })
+&nbsp;
+  // Handle context menu action request from pepper plugin.
+  webContents.on('pepper-context-menu', <span class="fstat-no" title="function not covered" >function (event, params) {</span>
+<span class="cstat-no" title="statement not covered" >    const menu = Menu.buildFromTemplate(params.menu)</span>
+<span class="cstat-no" title="statement not covered" >    menu.popup(params.x, params.y)</span>
+  })
+&nbsp;
+  // The devtools requests the webContents to reload.
+  webContents.on('devtools-reload-page', <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >    webContents.reload()</span>
+  })
+&nbsp;
+  // Delays the page-title-updated event to next tick.
+  webContents.on('-page-title-updated', function (...args) {
+    setImmediate(() =&gt; {
+      this.emit.apply(this, ['page-title-updated'].concat(args))
+    })
+  })
+&nbsp;
+  webContents.printToPDF = <span class="fstat-no" title="function not covered" >function (options, callback) {</span>
+<span class="cstat-no" title="statement not covered" >    const printingSetting = Object.assign({}, defaultPrintingSetting)</span>
+<span class="cstat-no" title="statement not covered" >    if (options.landscape) {</span>
+<span class="cstat-no" title="statement not covered" >      printingSetting.landscape = options.landscape</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (options.marginsType) {</span>
+<span class="cstat-no" title="statement not covered" >      printingSetting.marginsType = options.marginsType</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (options.printSelectionOnly) {</span>
+<span class="cstat-no" title="statement not covered" >      printingSetting.shouldPrintSelectionOnly = options.printSelectionOnly</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (options.printBackground) {</span>
+<span class="cstat-no" title="statement not covered" >      printingSetting.shouldPrintBackgrounds = options.printBackground</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (options.pageSize) {</span>
+<span class="cstat-no" title="statement not covered" >      const pageSize = options.pageSize</span>
+<span class="cstat-no" title="statement not covered" >      if (typeof pageSize === 'object') {</span>
+<span class="cstat-no" title="statement not covered" >        if (!pageSize.height || !pageSize.width) {</span>
+<span class="cstat-no" title="statement not covered" >          return callback(new Error('Must define height and width for pageSize'))</span>
+        }
+        // Dimensions in Microns
+        // 1 meter = 10^6 microns
+<span class="cstat-no" title="statement not covered" >        printingSetting.mediaSize = {</span>
+          name: 'CUSTOM',
+          custom_display_name: 'Custom',
+          height_microns: pageSize.height,
+          width_microns: pageSize.width
+        }
+      } else <span class="cstat-no" title="statement not covered" >if (PDFPageSizes[pageSize]) {</span>
+<span class="cstat-no" title="statement not covered" >        printingSetting.mediaSize = PDFPageSizes[pageSize]</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        return callback(new Error(`Does not support pageSize with ${pageSize}`))</span>
+      }
+    } else {
+<span class="cstat-no" title="statement not covered" >      printingSetting.mediaSize = PDFPageSizes['A4']</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this._printToPDF(printingSetting, callback)</span>
+  }
+&nbsp;
+  app.emit('web-contents-created', {}, webContents)
+}
+&nbsp;
+binding._setWrapWebContents(wrapWebContents)
+&nbsp;
+// Add JavaScript wrappers for Debugger class.
+const wrapDebugger = function (webContentsDebugger) {
+  // debugger is an EventEmitter.
+  Object.setPrototypeOf(webContentsDebugger, EventEmitter.prototype)
+}
+&nbsp;
+debuggerBinding._setWrapDebugger(wrapDebugger)
+&nbsp;
+module.exports = {
+  create (options = {}) {
+    return binding.create(options)
+  },
+&nbsp;
+  fromId (id) {
+    return binding.fromId(id)
+  },
+&nbsp;
+  getFocusedWebContents () {
+    let focused = null
+    for (let contents of binding.getAllWebContents()) {
+      if (!contents.isFocused()) continue
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (focused == null) focused = contents
+      // Return webview web contents which may be embedded inside another
+      // web contents that is also reporting as focused
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (contents.getType() === 'webview') <span class="cstat-no" title="statement not covered" >return contents</span>
+    }
+    return focused
+  },
+&nbsp;
+  getAllWebContents () {
+    return binding.getAllWebContents()
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

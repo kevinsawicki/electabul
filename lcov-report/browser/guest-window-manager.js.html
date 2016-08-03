@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for browser/guest-window-manager.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">browser/</a> guest-window-manager.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85.37% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>70/82</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">69.77% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>30/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>11/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">89.61% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>69/77</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">113×</span>
+<span class="cline-any cline-yes">113×</span>
+<span class="cline-any cline-yes">113×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict'
+&nbsp;
+const {BrowserWindow, ipcMain, webContents} = require('electron')
+&nbsp;
+const hasProp = {}.hasOwnProperty
+const frameToGuest = {}
+&nbsp;
+// Copy attribute of |parent| to |child| if it is not defined in |child|.
+const mergeOptions = function (child, parent) {
+  let key, value
+  for (key in parent) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!hasProp.call(parent, key)) <span class="cstat-no" title="statement not covered" >continue</span>
+    value = parent[key]
+    if (!(key in child)) {
+      if (typeof value === 'object') {
+        child[key] = mergeOptions({}, value)
+      } else {
+        child[key] = value
+      }
+    }
+  }
+  return child
+}
+&nbsp;
+// Merge |options| with the |embedder|'s window's options.
+const mergeBrowserWindowOptions = function (embedder, options) {
+  if (embedder.browserWindowOptions != null) {
+    // Inherit the original options if it is a BrowserWindow.
+    mergeOptions(options, embedder.browserWindowOptions)
+  } else {
+    // Or only inherit web-preferences if it is a webview.
+    if (options.webPreferences == null) {
+      options.webPreferences = {}
+    }
+    mergeOptions(options.webPreferences, embedder.getWebPreferences())
+  }
+&nbsp;
+  // Disable node integration on child window if disabled on parent window
+  if (embedder.getWebPreferences().nodeIntegration === false) {
+    options.webPreferences.nodeIntegration = false
+  }
+&nbsp;
+  return options
+}
+&nbsp;
+// Create a new guest created by |embedder| with |options|.
+const createGuest = function (embedder, url, frameName, options) {
+  let guest = frameToGuest[frameName]
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (frameName &amp;&amp; (guest != null)) {
+<span class="cstat-no" title="statement not covered" >    guest.loadURL(url)</span>
+<span class="cstat-no" title="statement not covered" >    return guest.id</span>
+  }
+&nbsp;
+  // Remember the embedder window's id.
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (options.webPreferences == null) {
+<span class="cstat-no" title="statement not covered" >    options.webPreferences = {}</span>
+  }
+  options.webPreferences.openerId = embedder.id
+  guest = new BrowserWindow(options)
+  guest.loadURL(url)
+&nbsp;
+  // When |embedder| is destroyed we should also destroy attached guest, and if
+  // guest is closed by user then we should prevent |embedder| from double
+  // closing guest.
+  const guestId = guest.webContents.id
+&nbsp;
+  const closedByEmbedder = function () {
+    guest.removeListener('closed', closedByUser)
+    guest.destroy()
+  }
+  const closedByUser = function () {
+    embedder.send('ELECTRON_GUEST_WINDOW_MANAGER_WINDOW_CLOSED_' + guestId)
+    embedder.removeListener('render-view-deleted', closedByEmbedder)
+  }
+  embedder.once('render-view-deleted', closedByEmbedder)
+  guest.once('closed', closedByUser)
+&nbsp;
+  if (frameName) {
+    frameToGuest[frameName] = guest
+    guest.frameName = frameName
+    guest.once('closed', function () {
+      delete frameToGuest[frameName]
+    })
+  }
+&nbsp;
+  return guestId
+}
+&nbsp;
+const getGuestWindow = function (guestId) {
+  const guestContents = webContents.fromId(guestId)
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (guestContents == null) <span class="cstat-no" title="statement not covered" >return</span>
+&nbsp;
+  let guestWindow = BrowserWindow.fromWebContents(guestContents)
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (guestWindow == null) {
+<span class="cstat-no" title="statement not covered" >    const hostContents = guestContents.hostWebContents</span>
+<span class="cstat-no" title="statement not covered" >    if (hostContents != null) {</span>
+<span class="cstat-no" title="statement not covered" >      guestWindow = BrowserWindow.fromWebContents(hostContents)</span>
+    }
+  }
+  return guestWindow
+}
+&nbsp;
+// Routed window.open messages.
+ipcMain.on('ELECTRON_GUEST_WINDOW_MANAGER_WINDOW_OPEN', function (event, url, frameName, disposition, options) {
+  options = mergeBrowserWindowOptions(event.sender, options)
+  event.sender.emit('new-window', event, url, frameName, disposition, options)
+  if ((event.sender.isGuest() &amp;&amp; !event.sender.allowPopups) || event.defaultPrevented) {
+    event.returnValue = null
+  } else {
+    event.returnValue = createGuest(event.sender, url, frameName, options)
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_GUEST_WINDOW_MANAGER_WINDOW_CLOSE', function (event, guestId) {
+  const guestWindow = getGuestWindow(guestId)
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (guestWindow != null) guestWindow.destroy()
+})
+&nbsp;
+ipcMain.on('ELECTRON_GUEST_WINDOW_MANAGER_WINDOW_METHOD', function (event, guestId, method, ...args) {
+  const guestWindow = getGuestWindow(guestId)
+  event.returnValue = guestWindow != null ? guestWindow[method].apply(guestWindow, args) : <span class="branch-1 cbranch-no" title="branch not covered" >null</span>
+})
+&nbsp;
+ipcMain.on('ELECTRON_GUEST_WINDOW_MANAGER_WINDOW_POSTMESSAGE', function (event, guestId, message, targetOrigin, sourceOrigin) {
+  const guestContents = webContents.fromId(guestId)
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (guestContents == null) <span class="cstat-no" title="statement not covered" >return</span>
+&nbsp;
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (guestContents.getURL().indexOf(targetOrigin) === 0 || targetOrigin === '*') {
+    const sourceId = event.sender.id
+    guestContents.send('ELECTRON_GUEST_WINDOW_POSTMESSAGE', sourceId, message, sourceOrigin)
+  }
+})
+&nbsp;
+ipcMain.on('ELECTRON_GUEST_WINDOW_MANAGER_WEB_CONTENTS_METHOD', <span class="fstat-no" title="function not covered" >function (event, guestId, method, ...args) {</span>
+<span class="cstat-no" title="statement not covered" >  const guestContents = webContents.fromId(guestId)</span>
+<span class="cstat-no" title="statement not covered" >  if (guestContents != null) <span class="cstat-no" title="statement not covered" >guestContents[method].apply(guestContents, args)</span></span>
+})
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

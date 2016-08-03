@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for renderer/web-view/web-view-attributes.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">renderer/web-view/</a> web-view-attributes.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">84.82% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>95/112</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">54.9% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>28/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.3% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>26/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">84.82% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>95/112</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">232×</span>
+<span class="cline-any cline-yes">232×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">992×</span>
+<span class="cline-any cline-yes">992×</span>
+<span class="cline-any cline-yes">992×</span>
+<span class="cline-any cline-yes">992×</span>
+<span class="cline-any cline-yes">992×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">556×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">68×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">992×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">550×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">440×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">222×</span>
+<span class="cline-any cline-yes">222×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict'
+&nbsp;
+const WebViewImpl = require('./web-view')
+const guestViewInternal = require('./guest-view-internal')
+const webViewConstants = require('./web-view-constants')
+const remote = require('electron').remote
+&nbsp;
+// Helper function to resolve url set in attribute.
+var a = document.createElement('a')
+&nbsp;
+var resolveURL = function (url) {
+  a.href = url
+  return a.href
+}
+&nbsp;
+// Attribute objects.
+// Default implementation of a WebView attribute.
+class WebViewAttribute {
+  constructor (name, webViewImpl) {
+    this.name = name
+    this.value = webViewImpl.webviewNode[name] || ''
+    this.webViewImpl = webViewImpl
+    this.ignoreMutation = false
+    this.defineProperty()
+  }
+&nbsp;
+  // Retrieves and returns the attribute's value.
+  getValue () {
+    return this.webViewImpl.webviewNode.getAttribute(this.name) || this.value
+  }
+&nbsp;
+  // Sets the attribute's value.
+  setValue (value) {
+    return this.webViewImpl.webviewNode.setAttribute(this.name, value || <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>
+  }
+&nbsp;
+  // Changes the attribute's value without triggering its mutation handler.
+  setValueIgnoreMutation (value) {
+    this.ignoreMutation = true
+    this.setValue(value)
+    this.ignoreMutation = false
+  }
+&nbsp;
+  // Defines this attribute as a property on the webview node.
+  defineProperty () {
+    return Object.defineProperty(this.webViewImpl.webviewNode, this.name, {
+      get: () =&gt; {
+        return this.getValue()
+      },
+      set: (value) =&gt; {
+        return this.setValue(value)
+      },
+      enumerable: true
+    })
+  }
+&nbsp;
+  // Called when the attribute's value changes.
+  handleMutation () {}
+}
+&nbsp;
+// An attribute that is treated as a Boolean.
+class BooleanAttribute extends WebViewAttribute {
+  getValue () {
+    return this.webViewImpl.webviewNode.hasAttribute(this.name)
+  }
+&nbsp;
+  setValue (value) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!value) {
+<span class="cstat-no" title="statement not covered" >      return this.webViewImpl.webviewNode.removeAttribute(this.name)</span>
+    } else {
+      return this.webViewImpl.webviewNode.setAttribute(this.name, '')
+    }
+  }
+}
+&nbsp;
+// Attribute used to define the demension limits of autosizing.
+class AutosizeDimensionAttribute extends WebViewAttribute {
+  getValue () {
+    return parseInt(this.webViewImpl.webviewNode.getAttribute(this.name)) || 0
+  }
+&nbsp;
+  handleMutation <span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >    if (!this.webViewImpl.guestInstanceId) {</span>
+<span class="cstat-no" title="statement not covered" >      return</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return guestViewInternal.setSize(this.webViewImpl.guestInstanceId, {</span>
+      enableAutoSize: this.webViewImpl.attributes[webViewConstants.ATTRIBUTE_AUTOSIZE].getValue(),
+      min: {
+        width: parseInt(this.webViewImpl.attributes[webViewConstants.ATTRIBUTE_MINWIDTH].getValue() || 0),
+        height: parseInt(this.webViewImpl.attributes[webViewConstants.ATTRIBUTE_MINHEIGHT].getValue() || 0)
+      },
+      max: {
+        width: parseInt(this.webViewImpl.attributes[webViewConstants.ATTRIBUTE_MAXWIDTH].getValue() || 0),
+        height: parseInt(this.webViewImpl.attributes[webViewConstants.ATTRIBUTE_MAXHEIGHT].getValue() || 0)
+      }
+    })
+  }
+}
+&nbsp;
+// Attribute that specifies whether the webview should be autosized.
+class AutosizeAttribute extends BooleanAttribute {
+  constructor (webViewImpl) {
+    super(webViewConstants.ATTRIBUTE_AUTOSIZE, webViewImpl)
+  }
+}
+&nbsp;
+AutosizeAttribute.prototype.handleMutation = AutosizeDimensionAttribute.prototype.handleMutation
+&nbsp;
+// Attribute representing the state of the storage partition.
+class PartitionAttribute extends WebViewAttribute {
+  constructor (webViewImpl) {
+    super(webViewConstants.ATTRIBUTE_PARTITION, webViewImpl)
+    this.validPartitionId = true
+  }
+&nbsp;
+  handleMutation (oldValue, newValue) {
+    newValue = newValue || <span class="branch-1 cbranch-no" title="branch not covered" >''</span>
+&nbsp;
+    // The partition cannot change if the webview has already navigated.
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.webViewImpl.beforeFirstNavigation) {
+<span class="cstat-no" title="statement not covered" >      window.console.error(webViewConstants.ERROR_MSG_ALREADY_NAVIGATED)</span>
+<span class="cstat-no" title="statement not covered" >      this.setValueIgnoreMutation(oldValue)</span>
+<span class="cstat-no" title="statement not covered" >      return</span>
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (newValue === 'persist:') {
+<span class="cstat-no" title="statement not covered" >      this.validPartitionId = false</span>
+<span class="cstat-no" title="statement not covered" >      return window.console.error(webViewConstants.ERROR_MSG_INVALID_PARTITION_ATTRIBUTE)</span>
+    }
+  }
+}
+&nbsp;
+// Attribute that handles the location and navigation of the webview.
+class SrcAttribute extends WebViewAttribute {
+  constructor (webViewImpl) {
+    super(webViewConstants.ATTRIBUTE_SRC, webViewImpl)
+    this.setupMutationObserver()
+  }
+&nbsp;
+  getValue () {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.webViewImpl.webviewNode.hasAttribute(this.name)) {
+      return resolveURL(this.webViewImpl.webviewNode.getAttribute(this.name))
+    } else {
+<span class="cstat-no" title="statement not covered" >      return this.value</span>
+    }
+  }
+&nbsp;
+  setValueIgnoreMutation (value) {
+    super.setValueIgnoreMutation(value)
+&nbsp;
+    // takeRecords() is needed to clear queued up src mutations. Without it, it
+    // is possible for this change to get picked up asyncronously by src's
+    // mutation observer |observer|, and then get handled even though we do not
+    // want to handle this mutation.
+    return this.observer.takeRecords()
+  }
+&nbsp;
+  handleMutation (oldValue, newValue) {
+    // Once we have navigated, we don't allow clearing the src attribute.
+    // Once &lt;webview&gt; enters a navigated state, it cannot return to a
+    // placeholder state.
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!newValue &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >oldValue)</span> {
+      // src attribute changes normally initiate a navigation. We suppress
+      // the next src attribute handler call to avoid reloading the page
+      // on every guest-initiated navigation.
+<span class="cstat-no" title="statement not covered" >      this.setValueIgnoreMutation(oldValue)</span>
+<span class="cstat-no" title="statement not covered" >      return</span>
+    }
+    return this.parse()
+  }
+&nbsp;
+  // The purpose of this mutation observer is to catch assignment to the src
+  // attribute without any changes to its value. This is useful in the case
+  // where the webview guest has crashed and navigating to the same address
+  // spawns off a new process.
+  setupMutationObserver () {
+    var params
+    this.observer = new MutationObserver((mutations) =&gt; {
+      var i, len, mutation, newValue, oldValue
+      for (i = 0, len = mutations.length; i &lt; len; i++) {
+        mutation = mutations[i]
+        oldValue = mutation.oldValue
+        newValue = this.getValue()
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (oldValue !== newValue) {
+          return
+        }
+<span class="cstat-no" title="statement not covered" >        this.handleMutation(oldValue, newValue)</span>
+      }
+    })
+    params = {
+      attributes: true,
+      attributeOldValue: true,
+      attributeFilter: [this.name]
+    }
+    return this.observer.observe(this.webViewImpl.webviewNode, params)
+  }
+&nbsp;
+  parse () {
+    var guestContents, httpreferrer, opts, useragent
+    if (!this.webViewImpl.elementAttached || !this.webViewImpl.attributes[webViewConstants.ATTRIBUTE_PARTITION].validPartitionId || !this.getValue()) {
+      return
+    }
+    if (this.webViewImpl.guestInstanceId == null) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (this.webViewImpl.beforeFirstNavigation) {
+        this.webViewImpl.beforeFirstNavigation = false
+        this.webViewImpl.createGuest()
+      }
+      return
+    }
+&nbsp;
+    // Navigate to |this.src|.
+    opts = {}
+    httpreferrer = this.webViewImpl.attributes[webViewConstants.ATTRIBUTE_HTTPREFERRER].getValue()
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (httpreferrer) {
+<span class="cstat-no" title="statement not covered" >      opts.httpReferrer = httpreferrer</span>
+    }
+    useragent = this.webViewImpl.attributes[webViewConstants.ATTRIBUTE_USERAGENT].getValue()
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (useragent) {
+<span class="cstat-no" title="statement not covered" >      opts.userAgent = useragent</span>
+    }
+    guestContents = remote.getGuestWebContents(this.webViewImpl.guestInstanceId)
+    return guestContents.loadURL(this.getValue(), opts)
+  }
+}
+&nbsp;
+// Attribute specifies HTTP referrer.
+class HttpReferrerAttribute extends WebViewAttribute {
+  constructor (webViewImpl) {
+    super(webViewConstants.ATTRIBUTE_HTTPREFERRER, webViewImpl)
+  }
+}
+&nbsp;
+// Attribute specifies user agent
+class UserAgentAttribute extends WebViewAttribute {
+  constructor (webViewImpl) {
+    super(webViewConstants.ATTRIBUTE_USERAGENT, webViewImpl)
+  }
+}
+&nbsp;
+// Attribute that set preload script.
+class PreloadAttribute extends WebViewAttribute {
+  constructor (webViewImpl) {
+    super(webViewConstants.ATTRIBUTE_PRELOAD, webViewImpl)
+  }
+&nbsp;
+  getValue () {
+    var preload, protocol
+    if (!this.webViewImpl.webviewNode.hasAttribute(this.name)) {
+      return this.value
+    }
+    preload = resolveURL(this.webViewImpl.webviewNode.getAttribute(this.name))
+    protocol = preload.substr(0, 5)
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (protocol !== 'file:') {
+<span class="cstat-no" title="statement not covered" >      console.error(webViewConstants.ERROR_MSG_INVALID_PRELOAD_ATTRIBUTE)</span>
+<span class="cstat-no" title="statement not covered" >      preload = ''</span>
+    }
+    return preload
+  }
+}
+&nbsp;
+// Attribute that specifies the blink features to be enabled.
+class BlinkFeaturesAttribute extends WebViewAttribute {
+  constructor (webViewImpl) {
+    super(webViewConstants.ATTRIBUTE_BLINKFEATURES, webViewImpl)
+  }
+}
+&nbsp;
+// Attribute that specifies the blink features to be disabled.
+class DisableBlinkFeaturesAttribute extends WebViewAttribute {
+  constructor (webViewImpl) {
+    super(webViewConstants.ATTRIBUTE_DISABLEBLINKFEATURES, webViewImpl)
+  }
+}
+&nbsp;
+// Sets up all of the webview attributes.
+WebViewImpl.prototype.setupWebViewAttributes = function () {
+  this.attributes = {}
+  this.attributes[webViewConstants.ATTRIBUTE_AUTOSIZE] = new AutosizeAttribute(this)
+  this.attributes[webViewConstants.ATTRIBUTE_PARTITION] = new PartitionAttribute(this)
+  this.attributes[webViewConstants.ATTRIBUTE_SRC] = new SrcAttribute(this)
+  this.attributes[webViewConstants.ATTRIBUTE_HTTPREFERRER] = new HttpReferrerAttribute(this)
+  this.attributes[webViewConstants.ATTRIBUTE_USERAGENT] = new UserAgentAttribute(this)
+  this.attributes[webViewConstants.ATTRIBUTE_NODEINTEGRATION] = new BooleanAttribute(webViewConstants.ATTRIBUTE_NODEINTEGRATION, this)
+  this.attributes[webViewConstants.ATTRIBUTE_PLUGINS] = new BooleanAttribute(webViewConstants.ATTRIBUTE_PLUGINS, this)
+  this.attributes[webViewConstants.ATTRIBUTE_DISABLEWEBSECURITY] = new BooleanAttribute(webViewConstants.ATTRIBUTE_DISABLEWEBSECURITY, this)
+  this.attributes[webViewConstants.ATTRIBUTE_ALLOWPOPUPS] = new BooleanAttribute(webViewConstants.ATTRIBUTE_ALLOWPOPUPS, this)
+  this.attributes[webViewConstants.ATTRIBUTE_PRELOAD] = new PreloadAttribute(this)
+  this.attributes[webViewConstants.ATTRIBUTE_BLINKFEATURES] = new BlinkFeaturesAttribute(this)
+  this.attributes[webViewConstants.ATTRIBUTE_DISABLEBLINKFEATURES] = new DisableBlinkFeaturesAttribute(this)
+&nbsp;
+  const autosizeAttributes = [webViewConstants.ATTRIBUTE_MAXHEIGHT, webViewConstants.ATTRIBUTE_MAXWIDTH, webViewConstants.ATTRIBUTE_MINHEIGHT, webViewConstants.ATTRIBUTE_MINWIDTH]
+  autosizeAttributes.forEach((attribute) =&gt; {
+    this.attributes[attribute] = new AutosizeDimensionAttribute(attribute, this)
+  })
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

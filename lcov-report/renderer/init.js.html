@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for renderer/init.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">renderer/</a> init.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.75% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>64/69</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">81.25% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>26/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.75% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>64/69</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-yes">67×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">67×</span>
+<span class="cline-any cline-yes">67×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-yes">848×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">846×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">845×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">808×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">807×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict'
+&nbsp;
+const events = require('events')
+const path = require('path')
+const Module = require('module')
+&nbsp;
+// We modified the original process.argv to let node.js load the
+// atom-renderer.js, we need to restore it here.
+process.argv.splice(1, 1)
+&nbsp;
+// Clear search paths.
+require('../common/reset-search-paths')
+&nbsp;
+// Import common settings.
+require('../common/init')
+&nbsp;
+var globalPaths = Module.globalPaths
+&nbsp;
+// Expose public APIs.
+globalPaths.push(path.join(__dirname, 'api', 'exports'))
+&nbsp;
+// The global variable will be used by ipc for event dispatching
+var v8Util = process.atomBinding('v8_util')
+&nbsp;
+v8Util.setHiddenValue(global, 'ipc', new events.EventEmitter())
+&nbsp;
+// Use electron module after everything is ready.
+const electron = require('electron')
+&nbsp;
+// Call webFrame method.
+electron.ipcRenderer.on('ELECTRON_INTERNAL_RENDERER_WEB_FRAME_METHOD', (event, method, args) =&gt; {
+<span class="cstat-no" title="statement not covered" >  electron.webFrame[method].apply(electron.webFrame, args)</span>
+})
+&nbsp;
+electron.ipcRenderer.on('ELECTRON_INTERNAL_RENDERER_ASYNC_WEB_FRAME_METHOD', (event, requestId, method, args) =&gt; {
+  const responseCallback = function (result) {
+    event.sender.send(`ELECTRON_INTERNAL_BROWSER_ASYNC_WEB_FRAME_RESPONSE_${requestId}`, result)
+  }
+  args.push(responseCallback)
+  electron.webFrame[method].apply(electron.webFrame, args)
+})
+&nbsp;
+// Process command line arguments.
+let nodeIntegration = 'false'
+let preloadScript = null
+let isBackgroundPage = false
+for (let arg of process.argv) {
+  if (arg.indexOf('--guest-instance-id=') === 0) {
+    // This is a guest web view.
+    process.guestInstanceId = parseInt(arg.substr(arg.indexOf('=') + 1))
+  } else if (arg.indexOf('--opener-id=') === 0) {
+    // This is a guest BrowserWindow.
+    process.openerId = parseInt(arg.substr(arg.indexOf('=') + 1))
+  } else if (arg.indexOf('--node-integration=') === 0) {
+    nodeIntegration = arg.substr(arg.indexOf('=') + 1)
+  } else if (arg.indexOf('--preload=') === 0) {
+    preloadScript = arg.substr(arg.indexOf('=') + 1)
+  } else <span class="missing-if-branch" title="if path not taken" >I</span>if (arg === '--background-page') {
+<span class="cstat-no" title="statement not covered" >    isBackgroundPage = true</span>
+  }
+}
+&nbsp;
+if (window.location.protocol === 'chrome-devtools:') {
+  // Override some inspector APIs.
+  require('./inspector')
+  nodeIntegration = 'true'
+} else if (window.location.protocol === 'chrome-extension:') {
+  // Add implementations of chrome API.
+  require('./chrome-api').injectTo(window.location.hostname, isBackgroundPage, window)
+  nodeIntegration = 'false'
+} else {
+  // Override default web functions.
+  require('./override')
+&nbsp;
+  // Inject content scripts.
+  require('./content-scripts-injector')
+&nbsp;
+  // Load webview tag implementation.
+  if (nodeIntegration === 'true' &amp;&amp; process.guestInstanceId == null) {
+    require('./web-view/web-view')
+    require('./web-view/web-view-attributes')
+  }
+}
+&nbsp;
+if (nodeIntegration === 'true') {
+  // Export node bindings to global.
+  global.require = require
+  global.module = module
+&nbsp;
+  // Set the __filename to the path of html file if it is file: protocol.
+  if (window.location.protocol === 'file:') {
+    var pathname = process.platform === 'win32' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >window.location.pathname[0] === '/' </span>? <span class="branch-0 cbranch-no" title="branch not covered" >window.location.pathname.substr(1) </span>: window.location.pathname
+    global.__filename = path.normalize(decodeURIComponent(pathname))
+    global.__dirname = path.dirname(global.__filename)
+&nbsp;
+    // Set module's filename so relative require can work as expected.
+    module.filename = global.__filename
+&nbsp;
+    // Also search for module under the html file.
+    module.paths = module.paths.concat(Module._nodeModulePaths(global.__dirname))
+  } else {
+    global.__filename = __filename
+    global.__dirname = __dirname
+  }
+&nbsp;
+  // Redirect window.onerror to uncaughtException.
+  window.onerror = function (message, filename, lineno, colno, error) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (global.process.listeners('uncaughtException').length &gt; 0) {
+      global.process.emit('uncaughtException', error)
+      return true
+    } else {
+<span class="cstat-no" title="statement not covered" >      return false</span>
+    }
+  }
+} else {
+  // Delete Node's symbols after the Environment has been loaded.
+  process.once('loaded', function () {
+    delete global.process
+    delete global.setImmediate
+    delete global.clearImmediate
+    return delete global.global
+  })
+}
+&nbsp;
+// Load the script specfied by the "preload" attribute.
+if (preloadScript) {
+  try {
+    require(preloadScript)
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    console.error('Unable to load preload script: ' + preloadScript)</span>
+<span class="cstat-no" title="statement not covered" >    console.error(error.stack || error.message)</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

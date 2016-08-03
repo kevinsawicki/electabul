@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for renderer/chrome-api.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">renderer/</a> chrome-api.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.52% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/79</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.09% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.08% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>17/77</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185</td><td class="line-coverage quiet"><span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const {ipcRenderer} = require('electron')
+const Event = require('./extensions/event')
+const url = require('url')
+&nbsp;
+let nextId = 0
+&nbsp;
+class Tab {
+  constructor <span class="fstat-no" title="function not covered" >(tabId) {</span>
+<span class="cstat-no" title="statement not covered" >    this.id = tabId</span>
+  }
+}
+&nbsp;
+class MessageSender {
+  constructor <span class="fstat-no" title="function not covered" >(tabId, extensionId) {</span>
+<span class="cstat-no" title="statement not covered" >    this.tab = tabId ? new Tab(tabId) : null</span>
+<span class="cstat-no" title="statement not covered" >    this.id = extensionId</span>
+<span class="cstat-no" title="statement not covered" >    this.url = `chrome-extension://${extensionId}`</span>
+  }
+}
+&nbsp;
+class Port {
+  constructor <span class="fstat-no" title="function not covered" >(tabId, portId, extensionId, name) {</span>
+<span class="cstat-no" title="statement not covered" >    this.tabId = tabId</span>
+<span class="cstat-no" title="statement not covered" >    this.portId = portId</span>
+<span class="cstat-no" title="statement not covered" >    this.disconnected = false</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.name = name</span>
+<span class="cstat-no" title="statement not covered" >    this.onDisconnect = new Event()</span>
+<span class="cstat-no" title="statement not covered" >    this.onMessage = new Event()</span>
+<span class="cstat-no" title="statement not covered" >    this.sender = new MessageSender(tabId, extensionId)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    ipcRenderer.once(`CHROME_PORT_DISCONNECT_${portId}`, () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this._onDisconnect()</span>
+    })
+<span class="cstat-no" title="statement not covered" >    ipcRenderer.on(`CHROME_PORT_POSTMESSAGE_${portId}`, (event, message) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      const sendResponse = <span class="fstat-no" title="function not covered" >function () {</span> <span class="cstat-no" title="statement not covered" >console.error('sendResponse is not implemented') }</span></span>
+<span class="cstat-no" title="statement not covered" >      this.onMessage.emit(message, this.sender, sendResponse)</span>
+    })
+  }
+&nbsp;
+  disconnect <span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >    if (this.disconnected) <span class="cstat-no" title="statement not covered" >return</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    ipcRenderer.sendToAll(this.tabId, `CHROME_PORT_DISCONNECT_${this.portId}`)</span>
+<span class="cstat-no" title="statement not covered" >    this._onDisconnect()</span>
+  }
+&nbsp;
+  postMessage <span class="fstat-no" title="function not covered" >(message) {</span>
+<span class="cstat-no" title="statement not covered" >    ipcRenderer.sendToAll(this.tabId, `CHROME_PORT_POSTMESSAGE_${this.portId}`, message)</span>
+  }
+&nbsp;
+  _onDisconnect <span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >    this.disconnected = true</span>
+<span class="cstat-no" title="statement not covered" >    ipcRenderer.removeAllListeners(`CHROME_PORT_POSTMESSAGE_${this.portId}`)</span>
+<span class="cstat-no" title="statement not covered" >    this.onDisconnect.emit()</span>
+  }
+}
+&nbsp;
+// Inject chrome API to the |context|
+exports.injectTo = function (extensionId, isBackgroundPage, context) {
+  const chrome = context.chrome = context.chrome || {}
+&nbsp;
+  ipcRenderer.on(`CHROME_RUNTIME_ONCONNECT_${extensionId}`, (event, tabId, portId, connectInfo) =&gt; {
+<span class="cstat-no" title="statement not covered" >    chrome.runtime.onConnect.emit(new Port(tabId, portId, extensionId, connectInfo.name))</span>
+  })
+&nbsp;
+  ipcRenderer.on(`CHROME_RUNTIME_ONMESSAGE_${extensionId}`, (event, tabId, message) =&gt; {
+<span class="cstat-no" title="statement not covered" >    chrome.runtime.onMessage.emit(message, new MessageSender(tabId, extensionId))</span>
+  })
+&nbsp;
+  ipcRenderer.on('CHROME_TABS_ONCREATED', (event, tabId) =&gt; {
+<span class="cstat-no" title="statement not covered" >    chrome.tabs.onCreated.emit(new Tab(tabId))</span>
+  })
+&nbsp;
+  ipcRenderer.on('CHROME_TABS_ONREMOVED', (event, tabId) =&gt; {
+<span class="cstat-no" title="statement not covered" >    chrome.tabs.onRemoved.emit(tabId)</span>
+  })
+&nbsp;
+  chrome.runtime = {
+    id: extensionId,
+&nbsp;
+    getURL: <span class="fstat-no" title="function not covered" >function (path) {</span>
+<span class="cstat-no" title="statement not covered" >      return url.format({</span>
+        protocol: 'chrome-extension',
+        slashes: true,
+        hostname: extensionId,
+        pathname: path
+      })
+    },
+&nbsp;
+    connect <span class="fstat-no" title="function not covered" >(...args) {</span>
+<span class="cstat-no" title="statement not covered" >      if (isBackgroundPage) {</span>
+<span class="cstat-no" title="statement not covered" >        console.error('chrome.runtime.connect is not supported in background page')</span>
+<span class="cstat-no" title="statement not covered" >        return</span>
+      }
+&nbsp;
+      // Parse the optional args.
+<span class="cstat-no" title="statement not covered" >      let targetExtensionId = extensionId</span>
+<span class="cstat-no" title="statement not covered" >      let connectInfo = {name: ''}</span>
+<span class="cstat-no" title="statement not covered" >      if (args.length === 1) {</span>
+<span class="cstat-no" title="statement not covered" >        connectInfo = args[0]</span>
+      } else <span class="cstat-no" title="statement not covered" >if (args.length === 2) {</span>
+<span class="cstat-no" title="statement not covered" >        [targetExtensionId, connectInfo] = args</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      const {tabId, portId} = ipcRenderer.sendSync('CHROME_RUNTIME_CONNECT', targetExtensionId, connectInfo)</span>
+<span class="cstat-no" title="statement not covered" >      return new Port(tabId, portId, extensionId, connectInfo.name)</span>
+    },
+&nbsp;
+    sendMessage <span class="fstat-no" title="function not covered" >(...args) {</span>
+<span class="cstat-no" title="statement not covered" >      if (isBackgroundPage) {</span>
+<span class="cstat-no" title="statement not covered" >        console.error('chrome.runtime.sendMessage is not supported in background page')</span>
+<span class="cstat-no" title="statement not covered" >        return</span>
+      }
+&nbsp;
+      // Parse the optional args.
+<span class="cstat-no" title="statement not covered" >      let targetExtensionId = extensionId</span>
+<span class="cstat-no" title="statement not covered" >      let message</span>
+<span class="cstat-no" title="statement not covered" >      if (args.length === 1) {</span>
+<span class="cstat-no" title="statement not covered" >        message = args[0]</span>
+      } else <span class="cstat-no" title="statement not covered" >if (args.length === 2) {</span>
+        // A case of not provide extension-id: (message, responseCallback)
+<span class="cstat-no" title="statement not covered" >        if (typeof args[1] === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >          console.error('responseCallback is not supported')</span>
+<span class="cstat-no" title="statement not covered" >          message = args[0]</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          [targetExtensionId, message] = args</span>
+        }
+      } else {
+<span class="cstat-no" title="statement not covered" >        console.error('options and responseCallback are not supported')</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      ipcRenderer.send('CHROME_RUNTIME_SENDMESSAGE', targetExtensionId, message)</span>
+    },
+&nbsp;
+    onConnect: new Event(),
+    onMessage: new Event(),
+    onInstalled: new Event()
+  }
+&nbsp;
+  chrome.tabs = {
+    executeScript <span class="fstat-no" title="function not covered" >(tabId, details, callback) {</span>
+<span class="cstat-no" title="statement not covered" >      const requestId = ++nextId</span>
+<span class="cstat-no" title="statement not covered" >      ipcRenderer.once(`CHROME_TABS_EXECUTESCRIPT_RESULT_${requestId}`, (event, result) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        callback([event.result])</span>
+      })
+<span class="cstat-no" title="statement not covered" >      ipcRenderer.send('CHROME_TABS_EXECUTESCRIPT', requestId, tabId, extensionId, details)</span>
+    },
+&nbsp;
+    sendMessage <span class="fstat-no" title="function not covered" >(tabId, message, options, responseCallback) {</span>
+<span class="cstat-no" title="statement not covered" >      if (responseCallback) {</span>
+<span class="cstat-no" title="statement not covered" >        console.error('responseCallback is not supported')</span>
+      }
+<span class="cstat-no" title="statement not covered" >      ipcRenderer.send('CHROME_TABS_SEND_MESSAGE', tabId, extensionId, isBackgroundPage, message)</span>
+    },
+&nbsp;
+    onUpdated: new Event(),
+    onCreated: new Event(),
+    onRemoved: new Event()
+  }
+&nbsp;
+  chrome.extension = {
+    getURL: chrome.runtime.getURL,
+    connect: chrome.runtime.connect,
+    onConnect: chrome.runtime.onConnect,
+    sendMessage: chrome.runtime.sendMessage,
+    onMessage: chrome.runtime.onMessage
+  }
+&nbsp;
+  chrome.storage = require('./extensions/storage')
+&nbsp;
+  chrome.pageAction = {
+    show <span class="fstat-no" title="function not covered" >() {</span>},
+    hide <span class="fstat-no" title="function not covered" >() {</span>},
+    setTitle <span class="fstat-no" title="function not covered" >() {</span>},
+    getTitle <span class="fstat-no" title="function not covered" >() {</span>},
+    setIcon <span class="fstat-no" title="function not covered" >() {</span>},
+    setPopup <span class="fstat-no" title="function not covered" >() {</span>},
+    getPopup <span class="fstat-no" title="function not covered" >() {</span>}
+  }
+&nbsp;
+  chrome.i18n = require('./extensions/i18n').setup(extensionId)
+  chrome.webNavigation = require('./extensions/web-navigation').setup()
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

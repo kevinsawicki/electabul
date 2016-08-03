@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for browser/api/menu-item.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">browser/api/</a> menu-item.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.18% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>54/55</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.32% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>28/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.18% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>54/55</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">142×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">142×</span>
+<span class="cline-any cline-yes">142×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1770×</span>
+<span class="cline-any cline-yes">572×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1770×</span>
+<span class="cline-any cline-yes">1546×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1055×</span>
+<span class="cline-any cline-yes">1055×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict'
+&nbsp;
+const roles = require('./menu-item-roles')
+&nbsp;
+let nextCommandId = 0
+&nbsp;
+const MenuItem = function (options) {
+  const {Menu} = require('electron')
+&nbsp;
+  this.selector = options.selector
+  this.type = options.type
+  this.role = options.role
+  this.label = options.label
+  this.sublabel = options.sublabel
+  this.accelerator = options.accelerator
+  this.icon = options.icon
+  this.enabled = options.enabled
+  this.visible = options.visible
+  this.checked = options.checked
+&nbsp;
+  this.submenu = options.submenu
+  if (this.submenu != null &amp;&amp; this.submenu.constructor !== Menu) {
+    this.submenu = Menu.buildFromTemplate(this.submenu)
+  }
+  if (this.type == null &amp;&amp; this.submenu != null) {
+    this.type = 'submenu'
+  }
+  if (this.type === 'submenu' &amp;&amp; (this.submenu == null || this.submenu.constructor !== Menu)) {
+    throw new Error('Invalid submenu')
+  }
+&nbsp;
+  this.overrideReadOnlyProperty('type', 'normal')
+  this.overrideReadOnlyProperty('role')
+  this.overrideReadOnlyProperty('accelerator')
+  this.overrideReadOnlyProperty('icon')
+  this.overrideReadOnlyProperty('submenu')
+&nbsp;
+  this.overrideProperty('label', roles.getDefaultLabel(this.role))
+  this.overrideProperty('sublabel', '')
+  this.overrideProperty('enabled', true)
+  this.overrideProperty('visible', true)
+  this.overrideProperty('checked', false)
+&nbsp;
+  if (!MenuItem.types.includes(this.type)) {
+    throw new Error(`Unknown menu item type: ${this.type}`)
+  }
+&nbsp;
+  this.overrideReadOnlyProperty('commandId', ++nextCommandId)
+&nbsp;
+  const click = options.click
+  this.click = (event, focusedWindow, focusedWebContents) =&gt; {
+    // Manually flip the checked flags when clicked.
+    if (this.type === 'checkbox' || this.type === 'radio') {
+      this.checked = !this.checked
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!roles.execute(this.role, focusedWindow, focusedWebContents)) {
+      if (typeof click === 'function') {
+        click(this, focusedWindow, event)
+      } else <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof this.selector === 'string' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >process.platform === 'darwin')</span> {
+<span class="cstat-no" title="statement not covered" >        Menu.sendActionToFirstResponder(this.selector)</span>
+      }
+    }
+  }
+}
+&nbsp;
+MenuItem.types = ['normal', 'separator', 'submenu', 'checkbox', 'radio']
+&nbsp;
+MenuItem.prototype.getDefaultRoleAccelerator = function () {
+  return roles.getDefaultAccelerator(this.role)
+}
+&nbsp;
+MenuItem.prototype.overrideProperty = function (name, defaultValue) {
+  if (defaultValue == null) {
+    defaultValue = null
+  }
+  if (this[name] == null) {
+    this[name] = defaultValue
+  }
+}
+&nbsp;
+MenuItem.prototype.overrideReadOnlyProperty = function (name, defaultValue) {
+  this.overrideProperty(name, defaultValue)
+  Object.defineProperty(this, name, {
+    enumerable: true,
+    writable: false,
+    value: this[name]
+  })
+}
+&nbsp;
+module.exports = MenuItem
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

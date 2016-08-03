@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for browser/api/auto-updater/squirrel-update-win.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">browser/api/auto-updater/</a> squirrel-update-win.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/60</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >const fs = require('fs')</span>
+<span class="cstat-no" title="statement not covered" >const path = require('path')</span>
+<span class="cstat-no" title="statement not covered" >const spawn = require('child_process').spawn</span>
+&nbsp;
+// i.e. my-app/app-0.1.13/
+<span class="cstat-no" title="statement not covered" >const appFolder = path.dirname(process.execPath)</span>
+&nbsp;
+// i.e. my-app/Update.exe
+<span class="cstat-no" title="statement not covered" >const updateExe = path.resolve(appFolder, '..', 'Update.exe')</span>
+<span class="cstat-no" title="statement not covered" >const exeName = path.basename(process.execPath)</span>
+<span class="cstat-no" title="statement not covered" >var spawnedArgs = []</span>
+<span class="cstat-no" title="statement not covered" >var spawnedProcess</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >var isSameArgs = <span class="fstat-no" title="function not covered" >function (args) {</span></span>
+<span class="cstat-no" title="statement not covered" >  return (args.length === spawnedArgs.length) &amp;&amp; args.every(<span class="fstat-no" title="function not covered" >function (e, i) {</span></span>
+<span class="cstat-no" title="statement not covered" >    return e === spawnedArgs[i]</span>
+  })
+}
+&nbsp;
+// Spawn a command and invoke the callback when it completes with an error
+// and the output from standard out.
+<span class="cstat-no" title="statement not covered" >var spawnUpdate = <span class="fstat-no" title="function not covered" >function (args, detached, callback) {</span></span>
+<span class="cstat-no" title="statement not covered" >  var error, errorEmitted, stderr, stdout</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  try {</span>
+    // Ensure we don't spawn multiple squirrel processes
+    // Process spawned, same args:        Attach events to alread running process
+    // Process spawned, different args:   Return with error
+    // No process spawned:                Spawn new process
+<span class="cstat-no" title="statement not covered" >    if (spawnedProcess &amp;&amp; !isSameArgs(args)) {</span>
+<span class="cstat-no" title="statement not covered" >      return callback('AutoUpdater process with arguments ' + args + ' is already running')</span>
+    } else <span class="cstat-no" title="statement not covered" >if (!spawnedProcess) {</span>
+<span class="cstat-no" title="statement not covered" >      spawnedProcess = spawn(updateExe, args, {</span>
+        detached: detached
+      })
+<span class="cstat-no" title="statement not covered" >      spawnedArgs = args || []</span>
+    }
+  } catch (error1) {
+<span class="cstat-no" title="statement not covered" >    error = error1</span>
+&nbsp;
+    // Shouldn't happen, but still guard it.
+<span class="cstat-no" title="statement not covered" >    process.nextTick(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >      return callback(error)</span>
+    })
+<span class="cstat-no" title="statement not covered" >    return</span>
+  }
+<span class="cstat-no" title="statement not covered" >  stdout = ''</span>
+<span class="cstat-no" title="statement not covered" >  stderr = ''</span>
+<span class="cstat-no" title="statement not covered" >  spawnedProcess.stdout.on('data', <span class="fstat-no" title="function not covered" >function (data) {</span></span>
+<span class="cstat-no" title="statement not covered" >    stdout += data</span>
+  })
+<span class="cstat-no" title="statement not covered" >  spawnedProcess.stderr.on('data', <span class="fstat-no" title="function not covered" >function (data) {</span></span>
+<span class="cstat-no" title="statement not covered" >    stderr += data</span>
+  })
+<span class="cstat-no" title="statement not covered" >  errorEmitted = false</span>
+<span class="cstat-no" title="statement not covered" >  spawnedProcess.on('error', <span class="fstat-no" title="function not covered" >function (error) {</span></span>
+<span class="cstat-no" title="statement not covered" >    errorEmitted = true</span>
+<span class="cstat-no" title="statement not covered" >    callback(error)</span>
+  })
+<span class="cstat-no" title="statement not covered" >  return spawnedProcess.on('exit', <span class="fstat-no" title="function not covered" >function (code, signal) {</span></span>
+<span class="cstat-no" title="statement not covered" >    spawnedProcess = undefined</span>
+<span class="cstat-no" title="statement not covered" >    spawnedArgs = []</span>
+&nbsp;
+    // We may have already emitted an error.
+<span class="cstat-no" title="statement not covered" >    if (errorEmitted) {</span>
+<span class="cstat-no" title="statement not covered" >      return</span>
+    }
+&nbsp;
+    // Process terminated with error.
+<span class="cstat-no" title="statement not covered" >    if (code !== 0) {</span>
+<span class="cstat-no" title="statement not covered" >      return callback('Command failed: ' + (signal != null ? signal : code) + '\n' + stderr)</span>
+    }
+&nbsp;
+    // Success.
+<span class="cstat-no" title="statement not covered" >    callback(null, stdout)</span>
+  })
+}
+&nbsp;
+// Start an instance of the installed app.
+<span class="cstat-no" title="statement not covered" >exports.processStart = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >  return spawnUpdate(['--processStartAndWait', exeName], true, <span class="fstat-no" title="function not covered" >function () {</span>})</span>
+}
+&nbsp;
+// Download the releases specified by the URL and write new results to stdout.
+<span class="cstat-no" title="statement not covered" >exports.download = <span class="fstat-no" title="function not covered" >function (updateURL, callback) {</span></span>
+<span class="cstat-no" title="statement not covered" >  return spawnUpdate(['--download', updateURL], false, <span class="fstat-no" title="function not covered" >function (error, stdout) {</span></span>
+<span class="cstat-no" title="statement not covered" >    var json, ref, ref1, update</span>
+<span class="cstat-no" title="statement not covered" >    if (error != null) {</span>
+<span class="cstat-no" title="statement not covered" >      return callback(error)</span>
+    }
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      // Last line of output is the JSON details about the releases
+<span class="cstat-no" title="statement not covered" >      json = stdout.trim().split('\n').pop()</span>
+<span class="cstat-no" title="statement not covered" >      update = (ref = JSON.parse(json)) != null ? (ref1 = ref.releasesToApply) != null ? typeof ref1.pop === 'function' ? ref1.pop() : void 0 : void 0 : void 0</span>
+    } catch (jsonError) {
+<span class="cstat-no" title="statement not covered" >      return callback('Invalid result:\n' + stdout)</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return callback(null, update)</span>
+  })
+}
+&nbsp;
+// Update the application to the latest remote version specified by URL.
+<span class="cstat-no" title="statement not covered" >exports.update = <span class="fstat-no" title="function not covered" >function (updateURL, callback) {</span></span>
+<span class="cstat-no" title="statement not covered" >  return spawnUpdate(['--update', updateURL], false, callback)</span>
+}
+&nbsp;
+// Is the Update.exe installed with the current application?
+<span class="cstat-no" title="statement not covered" >exports.supported = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >  try {</span>
+<span class="cstat-no" title="statement not covered" >    fs.accessSync(updateExe, fs.R_OK)</span>
+<span class="cstat-no" title="statement not covered" >    return true</span>
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    return false</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

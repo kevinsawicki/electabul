@@ -1,0 +1,1244 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for browser/chrome-extension.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">browser/</a> chrome-extension.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">68.32% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>138/202</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">52.86% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>37/70</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.35% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>28/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">68.06% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>130/191</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">612×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">262×</span>
+<span class="cline-any cline-yes">262×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">601×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">239×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">239×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">239×</span>
+<span class="cline-any cline-yes">123×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">239×</span>
+<span class="cline-any cline-yes">238×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">248×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">239×</span>
+<span class="cline-any cline-yes">239×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const {app, ipcMain, webContents, BrowserWindow} = require('electron')
+const {getAllWebContents} = process.atomBinding('web_contents')
+const renderProcessPreferences = process.atomBinding('render_process_preferences').forAllWebContents()
+&nbsp;
+const fs = require('fs')
+const path = require('path')
+const url = require('url')
+&nbsp;
+// TODO(zcbenz): Remove this when we have Object.values().
+const objectValues = function (object) {
+  return Object.keys(object).map(function (key) { return object[key] })
+}
+&nbsp;
+// Mapping between extensionId(hostname) and manifest.
+const manifestMap = {}  // extensionId =&gt; manifest
+const manifestNameMap = {}  // name =&gt; manifest
+&nbsp;
+const generateExtensionIdFromName = function (name) {
+  return name.replace(/[\W_]+/g, '-').toLowerCase()
+}
+&nbsp;
+const isWindowOrWebView = function (webContents) {
+  const type = webContents.getType()
+  return type === 'window' || type === 'webview'
+}
+&nbsp;
+// Create or get manifest object from |srcDirectory|.
+const getManifestFromPath = function (srcDirectory) {
+  let manifest
+  let manifestContent
+&nbsp;
+  try {
+    manifestContent = fs.readFileSync(path.join(srcDirectory, 'manifest.json'))
+  } catch (readError) {
+    console.warn(`Reading ${path.join(srcDirectory, 'manifest.json')} failed.`)
+    console.warn(readError.stack || <span class="branch-1 cbranch-no" title="branch not covered" >readError)</span>
+    throw readError
+  }
+&nbsp;
+  try {
+    manifest = JSON.parse(manifestContent)
+  } catch (parseError) {
+    console.warn(`Parsing ${path.join(srcDirectory, 'manifest.json')} failed.`)
+    console.warn(parseError.stack || <span class="branch-1 cbranch-no" title="branch not covered" >parseError)</span>
+    throw parseError
+  }
+&nbsp;
+  if (!manifestNameMap[manifest.name]) {
+    const extensionId = generateExtensionIdFromName(manifest.name)
+    manifestMap[extensionId] = manifestNameMap[manifest.name] = manifest
+    Object.assign(manifest, {
+      srcDirectory: srcDirectory,
+      extensionId: extensionId,
+      // We can not use 'file://' directly because all resources in the extension
+      // will be treated as relative to the root in Chrome.
+      startPage: url.format({
+        protocol: 'chrome-extension',
+        slashes: true,
+        hostname: extensionId,
+        pathname: manifest.devtools_page
+      })
+    })
+    return manifest
+  } else <span class="missing-if-branch" title="else path not taken" >E</span>if (manifest &amp;&amp; manifest.name) {
+    console.warn(`Attempted to load extension "${manifest.name}" that has already been loaded.`)
+  }
+}
+&nbsp;
+// Manage the background pages.
+const backgroundPages = {}
+&nbsp;
+const startBackgroundPages = function (manifest) {
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (backgroundPages[manifest.extensionId] || !manifest.background) return
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  let html</span>
+<span class="cstat-no" title="statement not covered" >  let name</span>
+<span class="cstat-no" title="statement not covered" >  if (manifest.background.page) {</span>
+<span class="cstat-no" title="statement not covered" >    name = manifest.background.page</span>
+<span class="cstat-no" title="statement not covered" >    html = fs.readFileSync(path.join(manifest.srcDirectory, manifest.background.page))</span>
+  } else {
+<span class="cstat-no" title="statement not covered" >    name = '_generated_background_page.html'</span>
+<span class="cstat-no" title="statement not covered" >    const scripts = manifest.background.scripts.map((name) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      return `&lt;script src="${name}"&gt;&lt;/script&gt;`</span>
+    }).join('')
+<span class="cstat-no" title="statement not covered" >    html = new Buffer(`&lt;html&gt;&lt;body&gt;${scripts}&lt;/body&gt;&lt;/html&gt;`)</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  const contents = webContents.create({</span>
+    partition: 'persist:__chrome_extension',
+    isBackgroundPage: true,
+    commandLineSwitches: ['--background-page']
+  })
+<span class="cstat-no" title="statement not covered" >  backgroundPages[manifest.extensionId] = { html: html, webContents: contents, name: name }</span>
+<span class="cstat-no" title="statement not covered" >  contents.loadURL(url.format({</span>
+    protocol: 'chrome-extension',
+    slashes: true,
+    hostname: manifest.extensionId,
+    pathname: name
+  }))
+}
+&nbsp;
+const removeBackgroundPages = function (manifest) {
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (!backgroundPages[manifest.extensionId]) return
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  backgroundPages[manifest.extensionId].webContents.destroy()</span>
+<span class="cstat-no" title="statement not covered" >  delete backgroundPages[manifest.extensionId]</span>
+}
+&nbsp;
+const sendToBackgroundPages = function (...args) {
+  for (const page of objectValues(backgroundPages)) {
+<span class="cstat-no" title="statement not covered" >    page.webContents.sendToAll(...args)</span>
+  }
+}
+&nbsp;
+// Dispatch web contents events to Chrome APIs
+const hookWebContentsEvents = function (webContents) {
+  const tabId = webContents.id
+&nbsp;
+  sendToBackgroundPages('CHROME_TABS_ONCREATED')
+&nbsp;
+  webContents.on('will-navigate', (event, url) =&gt; {
+    sendToBackgroundPages('CHROME_WEBNAVIGATION_ONBEFORENAVIGATE', {
+      frameId: 0,
+      parentFrameId: -1,
+      processId: webContents.getId(),
+      tabId: tabId,
+      timeStamp: Date.now(),
+      url: url
+    })
+  })
+&nbsp;
+  webContents.on('did-navigate', (event, url) =&gt; {
+    sendToBackgroundPages('CHROME_WEBNAVIGATION_ONCOMPLETED', {
+      frameId: 0,
+      parentFrameId: -1,
+      processId: webContents.getId(),
+      tabId: tabId,
+      timeStamp: Date.now(),
+      url: url
+    })
+  })
+&nbsp;
+  webContents.once('destroyed', () =&gt; {
+    sendToBackgroundPages('CHROME_TABS_ONREMOVED', tabId)
+  })
+}
+&nbsp;
+// Handle the chrome.* API messages.
+let nextId = 0
+&nbsp;
+ipcMain.on('CHROME_RUNTIME_CONNECT', <span class="fstat-no" title="function not covered" >function (event, extensionId, connectInfo) {</span>
+<span class="cstat-no" title="statement not covered" >  const page = backgroundPages[extensionId]</span>
+<span class="cstat-no" title="statement not covered" >  if (!page) {</span>
+<span class="cstat-no" title="statement not covered" >    console.error(`Connect to unknown extension ${extensionId}`)</span>
+<span class="cstat-no" title="statement not covered" >    return</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  const portId = ++nextId</span>
+<span class="cstat-no" title="statement not covered" >  event.returnValue = {tabId: page.webContents.id, portId: portId}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  event.sender.once('render-view-deleted', () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (page.webContents.isDestroyed()) <span class="cstat-no" title="statement not covered" >return</span></span>
+<span class="cstat-no" title="statement not covered" >    page.webContents.sendToAll(`CHROME_PORT_DISCONNECT_${portId}`)</span>
+  })
+<span class="cstat-no" title="statement not covered" >  page.webContents.sendToAll(`CHROME_RUNTIME_ONCONNECT_${extensionId}`, event.sender.id, portId, connectInfo)</span>
+})
+&nbsp;
+ipcMain.on('CHROME_I18N_MANIFEST', function (event, extensionId) {
+  event.returnValue = manifestMap[extensionId]
+})
+&nbsp;
+ipcMain.on('CHROME_RUNTIME_SENDMESSAGE', <span class="fstat-no" title="function not covered" >function (event, extensionId, message) {</span>
+<span class="cstat-no" title="statement not covered" >  const page = backgroundPages[extensionId]</span>
+<span class="cstat-no" title="statement not covered" >  if (!page) {</span>
+<span class="cstat-no" title="statement not covered" >    console.error(`Connect to unknown extension ${extensionId}`)</span>
+<span class="cstat-no" title="statement not covered" >    return</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  page.webContents.sendToAll(`CHROME_RUNTIME_ONMESSAGE_${extensionId}`, event.sender.id, message)</span>
+})
+&nbsp;
+ipcMain.on('CHROME_TABS_SEND_MESSAGE', <span class="fstat-no" title="function not covered" >function (event, tabId, extensionId, isBackgroundPage, message) {</span>
+<span class="cstat-no" title="statement not covered" >  const contents = webContents.fromId(tabId)</span>
+<span class="cstat-no" title="statement not covered" >  if (!contents) {</span>
+<span class="cstat-no" title="statement not covered" >    console.error(`Sending message to unknown tab ${tabId}`)</span>
+<span class="cstat-no" title="statement not covered" >    return</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  const senderTabId = isBackgroundPage ? null : event.sender.id</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  contents.sendToAll(`CHROME_RUNTIME_ONMESSAGE_${extensionId}`, senderTabId, message)</span>
+})
+&nbsp;
+ipcMain.on('CHROME_TABS_EXECUTESCRIPT', <span class="fstat-no" title="function not covered" >function (event, requestId, tabId, extensionId, details) {</span>
+<span class="cstat-no" title="statement not covered" >  const contents = webContents.fromId(tabId)</span>
+<span class="cstat-no" title="statement not covered" >  if (!contents) {</span>
+<span class="cstat-no" title="statement not covered" >    console.error(`Sending message to unknown tab ${tabId}`)</span>
+<span class="cstat-no" title="statement not covered" >    return</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  let code, url</span>
+<span class="cstat-no" title="statement not covered" >  if (details.file) {</span>
+<span class="cstat-no" title="statement not covered" >    const manifest = manifestMap[extensionId]</span>
+<span class="cstat-no" title="statement not covered" >    code = String(fs.readFileSync(path.join(manifest.srcDirectory, details.file)))</span>
+<span class="cstat-no" title="statement not covered" >    url = `chrome-extension://${extensionId}${details.file}`</span>
+  } else {
+<span class="cstat-no" title="statement not covered" >    code = details.code</span>
+<span class="cstat-no" title="statement not covered" >    url = `chrome-extension://${extensionId}/${String(Math.random()).substr(2, 8)}.js`</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  contents.send('CHROME_TABS_EXECUTESCRIPT', event.sender.id, requestId, extensionId, url, code)</span>
+})
+&nbsp;
+// Transfer the content scripts to renderer.
+const contentScripts = {}
+&nbsp;
+const injectContentScripts = function (manifest) {
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (contentScripts[manifest.name] || !manifest.content_scripts) return
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  const readArrayOfFiles = <span class="fstat-no" title="function not covered" >function (relativePath) {</span></span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      url: `chrome-extension://${manifest.extensionId}/${relativePath}`,
+      code: String(fs.readFileSync(path.join(manifest.srcDirectory, relativePath)))
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  const contentScriptToEntry = <span class="fstat-no" title="function not covered" >function (script) {</span></span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      matches: script.matches,
+      js: script.js.map(readArrayOfFiles),
+      runAt: script.run_at || 'document_idle'
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  try {</span>
+<span class="cstat-no" title="statement not covered" >    const entry = {</span>
+      extensionId: manifest.extensionId,
+      contentScripts: manifest.content_scripts.map(contentScriptToEntry)
+    }
+<span class="cstat-no" title="statement not covered" >    contentScripts[manifest.name] = renderProcessPreferences.addEntry(entry)</span>
+  } catch (e) {
+<span class="cstat-no" title="statement not covered" >    console.error('Failed to read content scripts', e)</span>
+  }
+}
+&nbsp;
+const removeContentScripts = function (manifest) {
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (!contentScripts[manifest.name]) return
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  renderProcessPreferences.removeEntry(contentScripts[manifest.name])</span>
+<span class="cstat-no" title="statement not covered" >  delete contentScripts[manifest.name]</span>
+}
+&nbsp;
+// Transfer the |manifest| to a format that can be recognized by the
+// |DevToolsAPI.addExtensions|.
+const manifestToExtensionInfo = function (manifest) {
+  return {
+    startPage: manifest.startPage,
+    srcDirectory: manifest.srcDirectory,
+    name: manifest.name,
+    exposeExperimentalAPIs: true
+  }
+}
+&nbsp;
+// Load the extensions for the window.
+const loadExtension = function (manifest) {
+  startBackgroundPages(manifest)
+  injectContentScripts(manifest)
+}
+&nbsp;
+const loadDevToolsExtensions = function (win, manifests) {
+  if (!win.devToolsWebContents) return
+&nbsp;
+  manifests.forEach(loadExtension)
+&nbsp;
+  const extensionInfoArray = manifests.map(manifestToExtensionInfo)
+  win.devToolsWebContents.executeJavaScript(`DevToolsAPI.addExtensions(${JSON.stringify(extensionInfoArray)})`)
+}
+&nbsp;
+app.on('web-contents-created', function (event, webContents) {
+  if (!isWindowOrWebView(webContents)) return
+&nbsp;
+  hookWebContentsEvents(webContents)
+  webContents.on('devtools-opened', function () {
+    loadDevToolsExtensions(webContents, objectValues(manifestMap))
+  })
+})
+&nbsp;
+// The chrome-extension: can map a extension URL request to real file path.
+const chromeExtensionHandler = function (request, callback) {
+  const parsed = url.parse(request.url)
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!parsed.hostname || !parsed.path) <span class="cstat-no" title="statement not covered" >return callback()</span>
+&nbsp;
+  const manifest = manifestMap[parsed.hostname]
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!manifest) <span class="cstat-no" title="statement not covered" >return callback()</span>
+&nbsp;
+  const page = backgroundPages[parsed.hostname]
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (page &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >parsed.path === `/${page.name}`)</span> {
+<span class="cstat-no" title="statement not covered" >    return callback({</span>
+      mimeType: 'text/html',
+      data: page.html
+    })
+  }
+&nbsp;
+  fs.readFile(path.join(manifest.srcDirectory, parsed.path), function (err, content) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (err) {
+<span class="cstat-no" title="statement not covered" >      return callback(-6) </span> // FILE_NOT_FOUND
+    } else {
+      return callback(content)
+    }
+  })
+}
+&nbsp;
+app.on('session-created', function (ses) {
+  ses.protocol.registerBufferProtocol('chrome-extension', chromeExtensionHandler, function (error) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (error) {
+<span class="cstat-no" title="statement not covered" >      console.error(`Unable to register chrome-extension protocol: ${error}`)</span>
+    }
+  })
+})
+&nbsp;
+// The persistent path of "DevTools Extensions" preference file.
+let loadedExtensionsPath = null
+&nbsp;
+app.on('will-quit', function () {
+  try {
+    const loadedExtensions = objectValues(manifestMap).map(function (manifest) {
+      return manifest.srcDirectory
+    })
+    if (loadedExtensions.length &gt; 0) {
+      try {
+        fs.mkdirSync(path.dirname(loadedExtensionsPath))
+      } catch (error) {
+        // Ignore error
+      }
+      fs.writeFileSync(loadedExtensionsPath, JSON.stringify(loadedExtensions))
+    } else {
+      fs.unlinkSync(loadedExtensionsPath)
+    }
+  } catch (error) {
+    // Ignore error
+  }
+})
+&nbsp;
+// We can not use protocol or BrowserWindow until app is ready.
+app.once('ready', function () {
+  // Load persisted extensions.
+  loadedExtensionsPath = path.join(app.getPath('userData'), 'DevTools Extensions')
+  try {
+    const loadedExtensions = JSON.parse(fs.readFileSync(loadedExtensionsPath))
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (Array.isArray(loadedExtensions)) {
+      for (const srcDirectory of loadedExtensions) {
+        // Start background pages and set content scripts.
+        const manifest = getManifestFromPath(srcDirectory)
+        loadExtension(manifest)
+      }
+    }
+  } catch (error) {
+    // Ignore error
+  }
+&nbsp;
+  // The public API to add/remove extensions.
+  BrowserWindow.addDevToolsExtension = function (srcDirectory) {
+    const manifest = getManifestFromPath(srcDirectory)
+    if (manifest) {
+      loadExtension(manifest)
+      for (const webContents of getAllWebContents()) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (isWindowOrWebView(webContents)) {
+          loadDevToolsExtensions(webContents, [manifest])
+        }
+      }
+      return manifest.name
+    }
+  }
+&nbsp;
+  BrowserWindow.removeDevToolsExtension = function (name) {
+    const manifest = manifestNameMap[name]
+    if (!manifest) return
+&nbsp;
+    removeBackgroundPages(manifest)
+    removeContentScripts(manifest)
+    delete manifestMap[manifest.extensionId]
+    delete manifestNameMap[name]
+  }
+&nbsp;
+  BrowserWindow.getDevToolsExtensions = function () {
+    const extensions = {}
+    Object.keys(manifestNameMap).forEach(function (name) {
+      const manifest = manifestNameMap[name]
+      extensions[name] = {name: manifest.name, version: manifest.version}
+    })
+    return extensions
+  }
+})
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

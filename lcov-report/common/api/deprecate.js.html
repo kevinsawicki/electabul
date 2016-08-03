@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/api/deprecate.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">common/api/</a> deprecate.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.23% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>16/61</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.38% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>3/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.29% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.23% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>16/61</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Deprecate a method.
+const deprecate = <span class="fstat-no" title="function not covered" >function (oldName, newName, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var warned</span>
+<span class="cstat-no" title="statement not covered" >  warned = false</span>
+<span class="cstat-no" title="statement not covered" >  return <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (!(warned || process.noDeprecation)) {</span>
+<span class="cstat-no" title="statement not covered" >      warned = true</span>
+<span class="cstat-no" title="statement not covered" >      deprecate.warn(oldName, newName)</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return fn.apply(this, arguments)</span>
+  }
+}
+&nbsp;
+// The method is renamed.
+deprecate.rename = <span class="fstat-no" title="function not covered" >function (object, oldName, newName) {</span>
+<span class="cstat-no" title="statement not covered" >  var newMethod, warned</span>
+<span class="cstat-no" title="statement not covered" >  warned = false</span>
+<span class="cstat-no" title="statement not covered" >  newMethod = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (!(warned || process.noDeprecation)) {</span>
+<span class="cstat-no" title="statement not covered" >      warned = true</span>
+<span class="cstat-no" title="statement not covered" >      deprecate.warn(oldName, newName)</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return this[newName].apply(this, arguments)</span>
+  }
+<span class="cstat-no" title="statement not covered" >  if (typeof object === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >    object.prototype[oldName] = newMethod</span>
+  } else {
+<span class="cstat-no" title="statement not covered" >    object[oldName] = newMethod</span>
+  }
+}
+&nbsp;
+// Forward the method to member.
+deprecate.member = <span class="fstat-no" title="function not covered" >function (object, method, member) {</span>
+<span class="cstat-no" title="statement not covered" >  var warned</span>
+<span class="cstat-no" title="statement not covered" >  warned = false</span>
+<span class="cstat-no" title="statement not covered" >  object.prototype[method] = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (!(warned || process.noDeprecation)) {</span>
+<span class="cstat-no" title="statement not covered" >      warned = true</span>
+<span class="cstat-no" title="statement not covered" >      deprecate.warn(method, member + '.' + method)</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return this[member][method].apply(this[member], arguments)</span>
+  }
+}
+&nbsp;
+// Deprecate a property.
+deprecate.property = <span class="fstat-no" title="function not covered" >function (object, property, method) {</span>
+<span class="cstat-no" title="statement not covered" >  return Object.defineProperty(object, property, {</span>
+    get: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >      var warned</span>
+<span class="cstat-no" title="statement not covered" >      warned = false</span>
+<span class="cstat-no" title="statement not covered" >      if (!(warned || process.noDeprecation)) {</span>
+<span class="cstat-no" title="statement not covered" >        warned = true</span>
+<span class="cstat-no" title="statement not covered" >        deprecate.warn(property + ' property', method + ' method')</span>
+      }
+<span class="cstat-no" title="statement not covered" >      return this[method]()</span>
+    }
+  })
+}
+&nbsp;
+// Deprecate an event.
+deprecate.event = <span class="fstat-no" title="function not covered" >function (emitter, oldName, newName, fn) {</span>
+<span class="cstat-no" title="statement not covered" >  var warned = false</span>
+<span class="cstat-no" title="statement not covered" >  return emitter.on(newName, <span class="fstat-no" title="function not covered" >function (...args) {</span></span>
+    // there is listeners for old API.
+<span class="cstat-no" title="statement not covered" >    if (this.listenerCount(oldName) &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!(warned || process.noDeprecation)) {</span>
+<span class="cstat-no" title="statement not covered" >        warned = true</span>
+<span class="cstat-no" title="statement not covered" >        deprecate.warn("'" + oldName + "' event", "'" + newName + "' event")</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (fn != null) {</span>
+<span class="cstat-no" title="statement not covered" >        fn.apply(this, arguments)</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        this.emit.apply(this, [oldName].concat(args))</span>
+      }
+    }
+  })
+}
+&nbsp;
+// Print deprecation warning.
+deprecate.warn = <span class="fstat-no" title="function not covered" >function (oldName, newName) {</span>
+<span class="cstat-no" title="statement not covered" >  return deprecate.log(oldName + ' is deprecated. Use ' + newName + ' instead.')</span>
+}
+&nbsp;
+var deprecationHandler = null
+&nbsp;
+// Print deprecation message.
+deprecate.log = function (message) {
+  if (typeof deprecationHandler === 'function') {
+    deprecationHandler(message)
+  } else <span class="missing-if-branch" title="else path not taken" >E</span>if (process.throwDeprecation) {
+    throw new Error(message)
+  } else <span class="cstat-no" title="statement not covered" >if (process.traceDeprecation) {</span>
+<span class="cstat-no" title="statement not covered" >    return console.trace(message)</span>
+  } else {
+<span class="cstat-no" title="statement not covered" >    return console.warn('(electron) ' + message)</span>
+  }
+}
+&nbsp;
+deprecate.setHandler = function (handler) {
+  deprecationHandler = handler
+}
+&nbsp;
+deprecate.getHandler = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >  return deprecationHandler</span>
+}
+&nbsp;
+module.exports = deprecate
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

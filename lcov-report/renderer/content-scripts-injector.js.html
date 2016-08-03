@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for renderer/content-scripts-injector.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">renderer/</a> content-scripts-injector.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.47% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>9/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.14% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.13% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>9/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</td><td class="line-coverage quiet"><span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const {ipcRenderer} = require('electron')
+const {runInThisContext} = require('vm')
+&nbsp;
+// Check whether pattern matches.
+// https://developer.chrome.com/extensions/match_patterns
+const matchesPattern = <span class="fstat-no" title="function not covered" >function (pattern) {</span>
+<span class="cstat-no" title="statement not covered" >  if (pattern === '&lt;all_urls&gt;') <span class="cstat-no" title="statement not covered" >return true</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  const regexp = new RegExp('^' + pattern.replace(/\*/g, '.*') + '$')</span>
+<span class="cstat-no" title="statement not covered" >  return location.href.match(regexp)</span>
+}
+&nbsp;
+// Run the code with chrome API integrated.
+const runContentScript = <span class="fstat-no" title="function not covered" >function (extensionId, url, code) {</span>
+<span class="cstat-no" title="statement not covered" >  const context = {}</span>
+<span class="cstat-no" title="statement not covered" >  require('./chrome-api').injectTo(extensionId, false, context)</span>
+<span class="cstat-no" title="statement not covered" >  const wrapper = `(function (chrome) {\n  ${code}\n  })`</span>
+<span class="cstat-no" title="statement not covered" >  const compiledWrapper = runInThisContext(wrapper, {</span>
+    filename: url,
+    lineOffset: 1,
+    displayErrors: true
+  })
+<span class="cstat-no" title="statement not covered" >  return compiledWrapper.call(this, context.chrome)</span>
+}
+&nbsp;
+// Run injected scripts.
+// https://developer.chrome.com/extensions/content_scripts
+const injectContentScript = <span class="fstat-no" title="function not covered" >function (extensionId, script) {</span>
+<span class="cstat-no" title="statement not covered" >  for (const match of script.matches) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!matchesPattern(match)) <span class="cstat-no" title="statement not covered" >return</span></span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  for (const {url, code} of script.js) {</span>
+<span class="cstat-no" title="statement not covered" >    const fire = runContentScript.bind(window, extensionId, url, code)</span>
+<span class="cstat-no" title="statement not covered" >    if (script.runAt === 'document_start') {</span>
+<span class="cstat-no" title="statement not covered" >      process.once('document-start', fire)</span>
+    } else <span class="cstat-no" title="statement not covered" >if (script.runAt === 'document_end') {</span>
+<span class="cstat-no" title="statement not covered" >      process.once('document-end', fire)</span>
+    } else <span class="cstat-no" title="statement not covered" >if (script.runAt === 'document_idle') {</span>
+<span class="cstat-no" title="statement not covered" >      document.addEventListener('DOMContentLoaded', fire)</span>
+    }
+  }
+}
+&nbsp;
+// Handle the request of chrome.tabs.executeJavaScript.
+ipcRenderer.on('CHROME_TABS_EXECUTESCRIPT', <span class="fstat-no" title="function not covered" >function (event, senderWebContentsId, requestId, extensionId, url, code) {</span>
+<span class="cstat-no" title="statement not covered" >  const result = runContentScript.call(window, extensionId, url, code)</span>
+<span class="cstat-no" title="statement not covered" >  ipcRenderer.sendToAll(senderWebContentsId, `CHROME_TABS_EXECUTESCRIPT_RESULT_${requestId}`, result)</span>
+})
+&nbsp;
+// Read the renderer process preferences.
+const preferences = process.getRenderProcessPreferences()
+<span class="missing-if-branch" title="else path not taken" >E</span>if (preferences) {
+  for (const pref of preferences) {
+<span class="cstat-no" title="statement not covered" >    if (pref.contentScripts) {</span>
+<span class="cstat-no" title="statement not covered" >      for (const script of pref.contentScripts) {</span>
+<span class="cstat-no" title="statement not covered" >        injectContentScript(pref.extensionId, script)</span>
+      }
+    }
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 03 2016 14:09:54 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
